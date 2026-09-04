@@ -26,115 +26,283 @@
   "contactPage": {
     "heading": "Get in touch"
   },
-  "work": {
-    "heading": "My Work",
-    "projectsHeading": "Product Projects",
-    "experienceHeading": "Work Experience",
-    "educationHeading": "Education",
-    "skillsHeading": "Skills"
-  },
-  "projects": [
-    {
-      "title": "PM Thinking Coach",
-      "meta": "Founder & Product Lead — 2025 – Present",
-      "description": "A learning app built from problem statement to a working end-to-end product: a PM skill tree of structured learning blocks and interactive decision scenarios to learn and evaluate your seniority level, on a SwiftUI client with a FastAPI + Postgres backend.",
-      "image": "pm-thinking-coach.png",
-      "imageAlt": "PM Thinking Coach — the Map screen showing the skill tree of six domains across three rings",
-      "caption": "The Map — six domains across three rings, with the recommended next block on the right.",
-      "bullets": [
-        "Designed scoring to reward reasoning over answer-picking: rationale and communication carry 60 of 100 points against 25 for the decision itself",
-        "Covered 7 competency tracks across three proficiency levels: product sense, analytics, user research, prioritization, execution, communication, and system design",
-        "Total of 159 lessons, 36 simulation scenarios, and a 515-term glossary",
-        "Implemented an audio overview feature that narrates lessons and coaching feedback for hands-free review",
-        "Defined the beta success metrics: activation, time to first value, D7 repeat practice, and feedback usefulness"
+  "collections": {
+    "work": {
+      "navLabel": "Work",
+      "heading": "My Work",
+      "intro": "",
+      "groups": [
+        {
+          "id": "projects",
+          "heading": "Product Projects"
+        },
+        {
+          "id": "experience",
+          "heading": "Work Experience"
+        }
+      ],
+      "items": [
+        {
+          "slug": "pm-thinking-coach",
+          "group": "projects",
+          "title": "PM Thinking Coach",
+          "meta": "Founder & Product Lead — 2025 – Present",
+          "summary": "A learning app that turns the product management skill map into a route: structured lessons, then a real situation with incomplete data that checks you can apply the skill.",
+          "image": "pm-thinking-coach.png",
+          "imageAlt": "The Map screen of PM Thinking Coach, showing six domains across three rings",
+          "tagline": "Turning the PM skill map into a route you can walk",
+          "sections": [
+            {
+              "heading": "What it is",
+              "paragraphs": [
+                "A learning app built from problem statement to a working end-to-end product: a PM skill tree of structured learning blocks and interactive decision scenarios to learn and evaluate your seniority level, on a SwiftUI client with a FastAPI + Postgres backend."
+              ],
+              "bullets": [],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            },
+            {
+              "heading": "How it works",
+              "paragraphs": [
+                "The design problem was to build something that measures thinking rather than recall. Scoring rewards reasoning over answer-picking, and a content validator enforces it."
+              ],
+              "bullets": [
+                "Rationale and communication carry 60 of 100 points against 25 for the decision itself, so picking the right option cannot pass on its own",
+                "Covered 7 competency tracks across three proficiency levels: product sense, analytics, user research, prioritization, execution, communication, and system design",
+                "Total of 159 lessons, 36 simulation scenarios, and a 515-term glossary",
+                "Implemented an audio overview feature that narrates lessons and coaching feedback for hands-free review"
+              ],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            },
+            {
+              "heading": "Measuring it",
+              "paragraphs": [
+                "Defined the beta success metrics before launch: activation, time to first value, D7 repeat practice, and feedback usefulness."
+              ],
+              "bullets": [],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "slug": "rae-health",
+          "group": "experience",
+          "title": "Rae Health",
+          "meta": "Product Manager Intern — Bristol, ME — June 2026 to September 2026",
+          "summary": "Defined the first North Star metric and metric tree for a live clinical wearable platform, and pressure-tested the ROI model behind the growth strategy.",
+          "image": "",
+          "imageAlt": "",
+          "tagline": "Giving a clinical wearable platform its first real baseline",
+          "sections": [
+            {
+              "heading": "Overview",
+              "paragraphs": [
+                "Worked on a live clinical wearable platform, defining foundational product metrics and validating growth strategy through data analysis and customer research."
+              ],
+              "bullets": [],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            },
+            {
+              "heading": "What I did",
+              "paragraphs": [],
+              "bullets": [
+                "Defined the company's first North Star metric and supporting metric tree (Reach → Activation → Retention → Clinical Engagement)",
+                "Analyzed event-level data (85 patients, ~91,000 detection events, 6 months) to compute the product's first measured baseline",
+                "Stress-tested the ROI model behind the company's growth strategy: traced each figure to source, formula, or \"unverifiable\", then recomputed break-even and reframed the claim before it reached prospects",
+                "Ran 6 customer interviews alongside usability studies to validate hypotheses before committing engineering capacity, and turned a gap in the acquisition funnel into a scoped backlog item"
+              ],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "slug": "questrom-consulting-lab",
+          "group": "experience",
+          "title": "Questrom Consulting Lab",
+          "meta": "Project Manager — Boston, MA — June 2026 to Present",
+          "summary": "Mapped 150+ back-office systems across 9 departments and surfaced $700K in projected annual savings, while leading an enterprise AI knowledge assistant.",
+          "image": "",
+          "imageAlt": "",
+          "tagline": "Finding the redundant tooling hiding across nine departments",
+          "sections": [
+            {
+              "heading": "What I did",
+              "paragraphs": [],
+              "bullets": [
+                "Mapped 150+ back-office systems across 9 departments via 8 stakeholder interviews; built a systems-relationship tool surfacing $700K in projected annual savings from redundant tooling",
+                "Led the development of an enterprise AI knowledge assistant and RAG solution while coordinating project execution, technical workstreams, deliverables, and stakeholder alignment"
+              ],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "slug": "attract-group",
+          "group": "experience",
+          "title": "Attract Group",
+          "meta": "Senior IT Project Manager — Las Vegas, NV — June 2021 to March 2025",
+          "summary": "Owned discovery to launch for 10+ client products across fintech, marketplace and healthtech, leading cross-functional teams of up to 15 people.",
+          "image": "",
+          "imageAlt": "",
+          "tagline": "Four years of shipping client products end to end",
+          "sections": [
+            {
+              "heading": "Overview",
+              "paragraphs": [
+                "Owned discovery to launch for 10+ client products across fintech, marketplace, and healthtech, leading cross-functional teams of up to 15 developers and specialists — back end, front end, mobile, QA, DevOps, designers and business analysts."
+              ],
+              "bullets": [],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            },
+            {
+              "heading": "What I did",
+              "paragraphs": [],
+              "bullets": [
+                "Ran requirements, functional decomposition, and MVP scoping on engagements up to $400K",
+                "Owned product and project backlog, including feature prioritization and task estimation — leading to on-time delivery of 90% of projects",
+                "Controlled project delivery timelines, roadmaps, and resource allocation to ensure 0% budget loss",
+                "Utilized Agile Scrum methodology in 3 large teams to maintain development efficiency",
+                "Defined technical specs; aligned architecture with business goals",
+                "Served as a mentor for junior managers, providing guidance and support"
+              ],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "slug": "european-american-business-organization",
+          "group": "experience",
+          "title": "European American Business Organization",
+          "meta": "Project Manager Assistant — New York City, NY — September 2019 to March 2020",
+          "summary": "Sourced and evaluated cross-border partnerships, and supported clients entering new markets.",
+          "image": "",
+          "imageAlt": "",
+          "tagline": "Cross-border partnerships and market entry",
+          "sections": [
+            {
+              "heading": "What I did",
+              "paragraphs": [],
+              "bullets": [
+                "Spearheaded strategic partnership search, identifying and evaluating potential collaborations. Found and contacted 500+ cold leads",
+                "Responded to inquiries related to cross-border market entry, offering insights and guidance for 6 clients",
+                "Assisted in organizing the European-American Business Forum and hosted foreign trade and investment delegations",
+                "Coordinated and facilitated 10+ B2B and B2C meetings, contributing to business interactions and partnerships"
+              ],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            }
+          ]
+        }
+      ]
+    },
+    "education": {
+      "navLabel": "Education",
+      "heading": "Education",
+      "intro": "",
+      "groups": [],
+      "items": [
+        {
+          "slug": "boston-university",
+          "group": "",
+          "title": "Boston University",
+          "meta": "MBA and MS Digital Technology — Questrom School of Business — Expected May 2027",
+          "summary": "Two degrees in parallel: an MBA alongside an MS in Digital Technology, with coursework spanning product build, systems architecture and machine learning.",
+          "image": "",
+          "imageAlt": "",
+          "tagline": "MBA and MS Digital Technology, Boston, MA",
+          "sections": [
+            {
+              "heading": "Coursework",
+              "paragraphs": [
+                "Digital Product Build, Systems Architecture, Gen AI in Business, Python, SQL, Machine Learning, Deep Learning, and others."
+              ],
+              "bullets": [],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            }
+          ]
+        },
+        {
+          "slug": "bard-college",
+          "group": "",
+          "title": "Bard College",
+          "meta": "BA Economics — Annandale-On-Hudson, NY — May 2021",
+          "summary": "BA in Economics, with a focus on how markets and incentives shape behaviour.",
+          "image": "",
+          "imageAlt": "",
+          "tagline": "BA Economics, Annandale-On-Hudson, NY",
+          "sections": []
+        }
+      ]
+    },
+    "skills": {
+      "navLabel": "Skills",
+      "heading": "Skills",
+      "intro": "",
+      "groups": [],
+      "items": [
+        {
+          "slug": "product",
+          "group": "",
+          "title": "Product",
+          "meta": "Discovery, definition and delivery",
+          "summary": "Discovery & customer interviews, PRDs, roadmapping, RICE prioritization, A/B testing & experiment design, competitive analysis, leading cross-functional teams.",
+          "image": "",
+          "imageAlt": "",
+          "tagline": "",
+          "sections": []
+        },
+        {
+          "slug": "data-and-ai",
+          "group": "",
+          "title": "Data & AI",
+          "meta": "Analysis and applied AI",
+          "summary": "SQL, Python (pandas), Tableau, Excel, Amplitude; RAG architecture, LLM evaluation & prompt design, Claude Code, model tradeoffs (latency/cost/quality).",
+          "image": "",
+          "imageAlt": "",
+          "tagline": "",
+          "sections": []
+        },
+        {
+          "slug": "tools",
+          "group": "",
+          "title": "Tools & Certifications",
+          "meta": "Day-to-day toolkit",
+          "summary": "Jira, Confluence, Figma, Linear; Professional Scrum Master I (PSM I).",
+          "image": "",
+          "imageAlt": "",
+          "tagline": "",
+          "sections": []
+        },
+        {
+          "slug": "languages",
+          "group": "",
+          "title": "Languages",
+          "meta": "",
+          "summary": "English (Fluent), Russian (Native).",
+          "image": "",
+          "imageAlt": "",
+          "tagline": "",
+          "sections": []
+        }
       ]
     }
-  ],
-  "experience": [
-    {
-      "title": "Rae Health",
-      "meta": "Product Manager Intern — Bristol, ME — June 2026 to September 2026",
-      "description": "Worked on a live clinical wearable platform, defining foundational product metrics and validating growth strategy through data analysis and customer research.",
-      "image": "",
-      "imageAlt": "",
-      "caption": "",
-      "bullets": [
-        "Defined the company's first North Star metric and supporting metric tree (Reach → Activation → Retention → Clinical Engagement)",
-        "Analyzed event-level data (85 patients, ~91,000 detection events, 6 months) to compute the product's first measured baseline",
-        "Stress-tested the ROI model behind the company's growth strategy: traced each figure to source, formula, or \"unverifiable\"",
-        "Ran 6 customer interviews alongside usability studies to validate hypotheses before committing engineering capacity"
-      ]
-    },
-    {
-      "title": "Questrom Consulting Lab",
-      "meta": "Project Manager — Boston, MA — June 2026 to Present",
-      "description": "",
-      "image": "",
-      "imageAlt": "",
-      "caption": "",
-      "bullets": [
-        "Mapped 150+ back-office systems across 9 departments via 8 stakeholder interviews; built a systems-relationship tool surfacing $700K in projected annual savings from redundant tooling",
-        "Led the development of an enterprise AI knowledge assistant and RAG solution while coordinating project execution, technical workstreams, deliverables, and stakeholder alignment"
-      ]
-    },
-    {
-      "title": "Attract Group",
-      "meta": "Senior IT Project Manager — Las Vegas, NV — June 2021 to March 2025",
-      "description": "Owned discovery to launch for 10+ client products across fintech, marketplace, and healthtech, leading cross-functional teams of up to 15 developers and specialists.",
-      "image": "",
-      "imageAlt": "",
-      "caption": "",
-      "bullets": [
-        "Ran requirements, functional decomposition, and MVP scoping on engagements up to $400K",
-        "Owned product and project backlog, including feature prioritization and task estimation — leading to on-time delivery of 90% of projects",
-        "Controlled project delivery timelines, roadmaps, and resource allocation to ensure 0% budget loss",
-        "Utilized Agile Scrum methodology in 3 large teams to maintain development efficiency",
-        "Defined technical specs; aligned architecture with business goals",
-        "Served as a mentor for junior managers, providing guidance and support"
-      ]
-    },
-    {
-      "title": "European American Business Organization",
-      "meta": "Project Manager Assistant — New York City, NY — September 2019 to March 2020",
-      "description": "",
-      "image": "",
-      "imageAlt": "",
-      "caption": "",
-      "bullets": [
-        "Spearheaded strategic partnership search, identifying and evaluating potential collaborations. Found and contacted 500+ cold leads",
-        "Responded to inquiries related to cross-border market entry, offering insights and guidance for 6 clients",
-        "Coordinated and facilitated 10+ B2B and B2C meetings, contributing to business interactions and partnerships"
-      ]
-    }
-  ],
-  "education": [
-    {
-      "degree": "MBA and MS Digital Technology",
-      "school": "Boston University, Questrom School of Business — Boston, MA",
-      "details": "Expected May 2027 — Relevant Coursework: Digital Product Build, Systems Architecture, Gen AI in Business, Python, SQL, Machine Learning, Deep Learning"
-    },
-    {
-      "degree": "BA Economics",
-      "school": "Bard College — Annandale-On-Hudson, NY",
-      "details": "May 2021"
-    }
-  ],
-  "skills": [
-    {
-      "category": "Product",
-      "text": "Discovery & customer interviews, PRDs, roadmapping, RICE prioritization, A/B testing & experiment design, competitive analysis, leading cross-functional teams"
-    },
-    {
-      "category": "Data & AI",
-      "text": "SQL, Python (pandas), Tableau, Excel, Amplitude; RAG architecture, LLM evaluation & prompt design, Claude Code, model tradeoffs (latency/cost/quality)"
-    },
-    {
-      "category": "Tools",
-      "text": "Jira, Confluence, Figma, Linear; Professional Scrum Master I (PSM I)"
-    },
-    {
-      "category": "Languages",
-      "text": "English (Fluent), Russian (Native)"
-    }
-  ]
+  }
 }

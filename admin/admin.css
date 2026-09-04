@@ -250,6 +250,36 @@ button.add.small { padding: 7px; font-size: 12px; }
 
 .row-tools { display: flex; gap: 2px; flex-shrink: 0; }
 
+.card-sub {
+    font-size: 11px;
+    color: var(--muted);
+    font-weight: 400;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Settings for a whole page, above that page's entries. */
+.settings-card { margin-bottom: 20px; }
+
+/* Sections nested inside an entry — indented so the nesting is readable. */
+.nested {
+    border-left: 2px solid var(--line);
+    padding-left: 14px;
+    margin-top: 8px;
+}
+
+.nested .card { background: var(--surface); }
+
+.section-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    margin: 22px 0 6px;
+}
+
+/* Indented rows in the preview picker mark detail pages under their section. */
+#preview-page option { font-family: var(--font); }
+
 /* String lists */
 .sublist { display: flex; flex-direction: column; gap: 6px; }
 .sublist-row { display: flex; gap: 6px; align-items: flex-start; }

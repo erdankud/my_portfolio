@@ -6,130 +6,80 @@
     <title>My Work — Erdan Kudaibergen</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=3">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Karla:ital,wght@0,300..600;1,300..500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
     <nav>
-        <a href="work.html">Work</a>
+        <div class="nav-group nav-left">
+            <a href="work.html">Work</a>
+            <a href="education.html">Education</a>
+            <a href="skills.html">Skills</a>
+        </div>
         <a href="index.html" class="nav-center">Erdan Kudaibergen</a>
-        <a href="contact.html">Contact</a>
+        <div class="nav-group nav-right">
+            <a href="contact.html">Contact</a>
+        </div>
     </nav>
 
-    <div class="page-header">
+    <div class="page">
+
+    <header class="page-header">
         <h1>My Work</h1>
-    </div>
+    </header>
 
-    <div class="work-section">
-
-        <h2>Product Projects</h2>
-
-        <div class="work-item">
-            <h3>PM Thinking Coach</h3>
-            <p class="work-meta">Founder &amp; Product Lead — 2025 – Present</p>
-            <p>
-                A learning app built from problem statement to a working end-to-end product: a PM skill tree of structured learning blocks and interactive decision scenarios to learn and evaluate your seniority level, on a SwiftUI client with a FastAPI + Postgres backend.
-            </p>
-            <figure class="project-shot">
-                <img src="pm-thinking-coach.png" alt="PM Thinking Coach — the Map screen showing the skill tree of six domains across three rings">
-                <figcaption>The Map — six domains across three rings, with the recommended next block on the right.</figcaption>
-            </figure>
-            <ul>
-                <li>Designed scoring to reward reasoning over answer-picking: rationale and communication carry 60 of 100 points against 25 for the decision itself</li>
-                <li>Covered 7 competency tracks across three proficiency levels: product sense, analytics, user research, prioritization, execution, communication, and system design</li>
-                <li>Total of 159 lessons, 36 simulation scenarios, and a 515-term glossary</li>
-                <li>Implemented an audio overview feature that narrates lessons and coaching feedback for hands-free review</li>
-                <li>Defined the beta success metrics: activation, time to first value, D7 repeat practice, and feedback usefulness</li>
-            </ul>
-        </div>
-
-        <h2>Work Experience</h2>
-
-        <div class="work-item">
-            <h3>Rae Health</h3>
-            <p class="work-meta">Product Manager Intern — Bristol, ME — June 2026 to September 2026</p>
-            <p>
-                Worked on a live clinical wearable platform, defining foundational product metrics and validating growth strategy through data analysis and customer research.
-            </p>
-            <ul>
-                <li>Defined the company's first North Star metric and supporting metric tree (Reach → Activation → Retention → Clinical Engagement)</li>
-                <li>Analyzed event-level data (85 patients, ~91,000 detection events, 6 months) to compute the product's first measured baseline</li>
-                <li>Stress-tested the ROI model behind the company's growth strategy: traced each figure to source, formula, or "unverifiable"</li>
-                <li>Ran 6 customer interviews alongside usability studies to validate hypotheses before committing engineering capacity</li>
-            </ul>
-        </div>
-
-        <div class="work-item">
-            <h3>Questrom Consulting Lab</h3>
-            <p class="work-meta">Project Manager — Boston, MA — June 2026 to Present</p>
-            <ul>
-                <li>Mapped 150+ back-office systems across 9 departments via 8 stakeholder interviews; built a systems-relationship tool surfacing $700K in projected annual savings from redundant tooling</li>
-                <li>Led the development of an enterprise AI knowledge assistant and RAG solution while coordinating project execution, technical workstreams, deliverables, and stakeholder alignment</li>
-            </ul>
-        </div>
-
-        <div class="work-item">
-            <h3>Attract Group</h3>
-            <p class="work-meta">Senior IT Project Manager — Las Vegas, NV — June 2021 to March 2025</p>
-            <p>
-                Owned discovery to launch for 10+ client products across fintech, marketplace, and healthtech, leading cross-functional teams of up to 15 developers and specialists.
-            </p>
-            <ul>
-                <li>Ran requirements, functional decomposition, and MVP scoping on engagements up to $400K</li>
-                <li>Owned product and project backlog, including feature prioritization and task estimation — leading to on-time delivery of 90% of projects</li>
-                <li>Controlled project delivery timelines, roadmaps, and resource allocation to ensure 0% budget loss</li>
-                <li>Utilized Agile Scrum methodology in 3 large teams to maintain development efficiency</li>
-                <li>Defined technical specs; aligned architecture with business goals</li>
-                <li>Served as a mentor for junior managers, providing guidance and support</li>
-            </ul>
-        </div>
-
-        <div class="work-item">
-            <h3>European American Business Organization</h3>
-            <p class="work-meta">Project Manager Assistant — New York City, NY — September 2019 to March 2020</p>
-            <ul>
-                <li>Spearheaded strategic partnership search, identifying and evaluating potential collaborations. Found and contacted 500+ cold leads</li>
-                <li>Responded to inquiries related to cross-border market entry, offering insights and guidance for 6 clients</li>
-                <li>Coordinated and facilitated 10+ B2B and B2C meetings, contributing to business interactions and partnerships</li>
-            </ul>
-        </div>
-
-        <h2>Education</h2>
-
-        <div class="edu-item">
-            <h3>MBA and MS Digital Technology</h3>
-            <p class="edu-school">Boston University, Questrom School of Business — Boston, MA</p>
-            <p class="edu-details">Expected May 2027 — Relevant Coursework: Digital Product Build, Systems Architecture, Gen AI in Business, Python, SQL, Machine Learning, Deep Learning</p>
-        </div>
-
-        <div class="edu-item">
-            <h3>BA Economics</h3>
-            <p class="edu-school">Bard College — Annandale-On-Hudson, NY</p>
-            <p class="edu-details">May 2021</p>
-        </div>
-
-        <h2>Skills</h2>
-
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h4>Product</h4>
-                <p>Discovery &amp; customer interviews, PRDs, roadmapping, RICE prioritization, A/B testing &amp; experiment design, competitive analysis, leading cross-functional teams</p>
-            </div>
-            <div class="skill-category">
-                <h4>Data &amp; AI</h4>
-                <p>SQL, Python (pandas), Tableau, Excel, Amplitude; RAG architecture, LLM evaluation &amp; prompt design, Claude Code, model tradeoffs (latency/cost/quality)</p>
-            </div>
-            <div class="skill-category">
-                <h4>Tools</h4>
-                <p>Jira, Confluence, Figma, Linear; Professional Scrum Master I (PSM I)</p>
-            </div>
-            <div class="skill-category">
-                <h4>Languages</h4>
-                <p>English (Fluent), Russian (Native)</p>
-            </div>
-        </div>
-
+    <section class="cards">
+        <h2 class="group-heading">Product Projects</h2>
+            <article class="card">
+                <div class="card-media">
+                    <img src="pm-thinking-coach.png" alt="The Map screen of PM Thinking Coach, showing six domains across three rings" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <h3>PM Thinking Coach</h3>
+                    <p class="card-meta">Founder &amp; Product Lead — 2025 – Present</p>
+                    <p class="card-summary">A learning app that turns the product management skill map into a route: structured lessons, then a real situation with incomplete data that checks you can apply the skill.</p>
+                    <a class="learn-more" href="work-pm-thinking-coach.html">Learn More</a>
+                </div>
+            </article>
+        <h2 class="group-heading">Work Experience</h2>
+            <article class="card">
+                <div class="card-media card-media-empty" aria-hidden="true"></div>
+                <div class="card-body">
+                    <h3>Rae Health</h3>
+                    <p class="card-meta">Product Manager Intern — Bristol, ME — June 2026 to September 2026</p>
+                    <p class="card-summary">Defined the first North Star metric and metric tree for a live clinical wearable platform, and pressure-tested the ROI model behind the growth strategy.</p>
+                    <a class="learn-more" href="work-rae-health.html">Learn More</a>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card-media card-media-empty" aria-hidden="true"></div>
+                <div class="card-body">
+                    <h3>Questrom Consulting Lab</h3>
+                    <p class="card-meta">Project Manager — Boston, MA — June 2026 to Present</p>
+                    <p class="card-summary">Mapped 150+ back-office systems across 9 departments and surfaced $700K in projected annual savings, while leading an enterprise AI knowledge assistant.</p>
+                    <a class="learn-more" href="work-questrom-consulting-lab.html">Learn More</a>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card-media card-media-empty" aria-hidden="true"></div>
+                <div class="card-body">
+                    <h3>Attract Group</h3>
+                    <p class="card-meta">Senior IT Project Manager — Las Vegas, NV — June 2021 to March 2025</p>
+                    <p class="card-summary">Owned discovery to launch for 10+ client products across fintech, marketplace and healthtech, leading cross-functional teams of up to 15 people.</p>
+                    <a class="learn-more" href="work-attract-group.html">Learn More</a>
+                </div>
+            </article>
+            <article class="card">
+                <div class="card-media card-media-empty" aria-hidden="true"></div>
+                <div class="card-body">
+                    <h3>European American Business Organization</h3>
+                    <p class="card-meta">Project Manager Assistant — New York City, NY — September 2019 to March 2020</p>
+                    <p class="card-summary">Sourced and evaluated cross-border partnerships, and supported clients entering new markets.</p>
+                    <a class="learn-more" href="work-european-american-business-organization.html">Learn More</a>
+                </div>
+            </article>
+    </section>
     </div>
 
     <footer>
@@ -146,5 +96,6 @@
         <p class="copyright">© 2025 Erdan Kudaibergen. All rights reserved.</p>
     </footer>
 
+    <script src="transitions.js?v=5"></script>
 </body>
 </html>

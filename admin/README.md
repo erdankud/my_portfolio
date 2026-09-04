@@ -15,9 +15,32 @@ through the GitHub API, using a token you paste in.
                                          content.json
 
 `content.json` is the single source of content. The panel edits it, then
-regenerates the three HTML pages from `templates.js` and commits everything
-together in **one** commit — never file by file, so the site is never left half
-updated if a request fails partway.
+regenerates every HTML page from `templates.js` and commits everything together
+in **one** commit — never file by file, so the site is never left half updated
+if a request fails partway.
+
+## Pages
+
+Three collections — **Work**, **Education** and **Skills** — share one shape.
+Each produces an index page of cards, plus a detail page for any entry that has
+something to show:
+
+    work.html                     index of cards
+    work-pm-thinking-coach.html   detail page for one entry
+    education.html
+    skills.html
+
+Detail pages are written flat (`work-<slug>.html`, not `work/<slug>.html`) so
+every page sits beside `style.css` and the images, and one set of relative links
+works from everywhere.
+
+An entry gets a **Learn More** link only once it has at least one section with
+content. Until then it is a card and nothing more — better than a link to an
+empty page. The panel shows which state an entry is in next to its name.
+
+Changing an entry's slug changes its page address, so any link you have shared
+to the old address stops working. The panel fills the slug in from the title
+only while it is still blank, and never rewrites one you already published.
 
 The published pages stay plain static HTML on purpose. They contain the real
 text, so the site loads with no JavaScript, indexes normally, and never flashes
@@ -76,3 +99,4 @@ using the old file.
 | `github.js` | GitHub API client — verify, read, single-commit write |
 | `templates.js` | Generates the public HTML. The only place the markup lives |
 | `verify.html` | Checks the templates still reproduce the published pages |
+| `generate.html` | Rebuilds every page from content.json, for hand edits |

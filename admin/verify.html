@@ -14,20 +14,28 @@ try {
   const built = buildAll(content);
   let failures = 0;
 
-  for (const page of ["index.html", "work.html", "contact.html"]) {
-    const expected = await (await fetch("../" + page)).text();
+  for (const page of Object.keys(built)) {
+    if (page.endsWith(".json")) continue;
+
+    const res = await fetch("../" + page);
+    if (!res.ok) {
+      failures++;
+      lines.push("MISSING  " + page + "  (generated, but not in the repository)");
+      continue;
+    }
+    const expected = await res.text();
     const actual = built[page];
 
     if (expected === actual) {
-      lines.push("ok    " + page);
+      lines.push("ok       " + page);
       continue;
     }
     failures++;
-    lines.push("DIFF  " + page);
+    lines.push("DIFF     " + page);
     const a = expected.split("\n");
     const b = actual.split("\n");
     let shown = 0;
-    for (let i = 0; i < Math.max(a.length, b.length) && shown < 12; i++) {
+    for (let i = 0; i < Math.max(a.length, b.length) && shown < 8; i++) {
       if (a[i] !== b[i]) {
         shown++;
         lines.push("  line " + (i + 1));
@@ -36,8 +44,13 @@ try {
       }
     }
   }
+
   lines.push("");
-  lines.push(failures ? failures + " page(s) differ." : "RESULT: all pages reproduce exactly.");
+  lines.push(
+    failures
+      ? failures + " page(s) differ."
+      : "RESULT: all " + (Object.keys(built).length - 1) + " pages reproduce exactly."
+  );
 } catch (err) {
   lines.push("ERROR: " + (err && err.message ? err.message : String(err)));
 }

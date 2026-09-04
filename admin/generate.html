@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Generate pages</title></head>
+<body>
+<!-- Rebuilds every page from content.json. Useful after hand-editing
+     content.json or templates.js without opening the panel. -->
+<div id="files"></div>
+<script type="module">
+import { buildAll } from "./templates.js";
+const content = await (await fetch("../content.json")).json();
+const built = buildAll(content);
+const root = document.getElementById("files");
+for (const [name, text] of Object.entries(built)) {
+  const pre = document.createElement("pre");
+  pre.dataset.name = name;
+  pre.textContent = text;
+  root.append(pre);
+}
+document.title = "Generated " + Object.keys(built).length + " files";
+</script>
+</body>
+</html>

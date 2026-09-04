@@ -4,10 +4,17 @@
 // real text, so they load with no JavaScript, index normally, and never flash
 // empty while content is fetched. This file is the only place the markup lives,
 // so a layout change is made here once and re-applied to every page on save.
+//
+// Detail pages are written flat — work-pm-thinking-coach.html, not
+// work/pm-thinking-coach.html — so every page sits beside style.css and the
+// images, and one set of relative links works everywhere.
 
 // Bump this whenever style.css changes, so browsers fetch the new file instead
 // of a cached copy. GitHub Pages serves the stylesheet with a long cache life.
-const CSS_VERSION = 3;
+const CSS_VERSION = 5;
+
+const FONTS =
+  "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Karla:ital,wght@0,300..600;1,300..500&display=swap";
 
 const ICON = {
   linkedin:
@@ -16,6 +23,8 @@ const ICON = {
     '<path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>',
   download: '<path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>',
 };
+
+const COLLECTIONS = ["work", "education", "skills"];
 
 /** Escape text for use in HTML body content. */
 export function esc(value) {
@@ -30,11 +39,42 @@ export function escAttr(value) {
   return esc(value).replace(/"/g, "&quot;");
 }
 
+/** Turn a title into a file-safe slug. Exported so the panel suggests the same. */
+export function slugify(text) {
+  return String(text)
+    .toLowerCase()
+    .replace(/['’]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 60);
+}
+
+/** The file a detail page is written to. */
+export function detailPath(collectionId, slug) {
+  return `${collectionId}-${slug}.html`;
+}
+
+/** An item earns a Learn More link only when there is a page worth opening. */
+export function hasDetail(item) {
+  return (item.sections || []).some(
+    (s) =>
+      String(s.heading || "").trim() ||
+      (s.paragraphs || []).some((p) => String(p).trim()) ||
+      (s.bullets || []).some((b) => String(b).trim()) ||
+      String(s.image || "").trim()
+  );
+}
+
 function svg(name, size) {
   return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor">${ICON[name]}</svg>`;
 }
 
-function head(title) {
+function head(title, c) {
+  const links = COLLECTIONS.map((id) => {
+    const col = c.collections[id];
+    return `            <a href="${id}.html">${esc(col.navLabel)}</a>`;
+  }).join("\n");
+
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,26 +83,28 @@ function head(title) {
     <title>${esc(title)}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="${FONTS}" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=${CSS_VERSION}">
 </head>
 <body>
 
     <nav>
-        <a href="work.html">Work</a>
-        <a href="index.html" class="nav-center">${esc(title === "Erdan Kudaibergen" ? title : nameFromTitle(title))}</a>
-        <a href="contact.html">Contact</a>
+        <div class="nav-group nav-left">
+${links}
+        </div>
+        <a href="index.html" class="nav-center">${esc(c.site.name)}</a>
+        <div class="nav-group nav-right">
+            <a href="contact.html">Contact</a>
+        </div>
     </nav>
+
+    <div class="page">
 `;
 }
 
-function nameFromTitle(title) {
-  const parts = String(title).split("—");
-  return parts[parts.length - 1].trim();
-}
+function foot(site) {
+  return `    </div>
 
-function footer(site) {
-  return `
     <footer>
         <div class="footer-links">
             <a href="${escAttr(site.linkedin)}" target="_blank" rel="noopener">
@@ -76,239 +118,250 @@ function footer(site) {
         </div>
         <p class="copyright">${esc(site.copyright)}</p>
     </footer>
+
+    <script src="transitions.js?v=${CSS_VERSION}"></script>
+</body>
+</html>
 `;
 }
 
-function paragraphs(list) {
+function paragraphs(list, indent = "        ") {
   return (list || [])
     .filter((p) => String(p).trim())
-    .map((p) => `        <p>\n            ${esc(p)}\n        </p>`)
+    .map((p) => `${indent}<p>${esc(p)}</p>`)
     .join("\n");
 }
 
-/** A project or job entry: title, meta line, description, optional image, bullets. */
-function entry(item) {
-  const out = [`        <div class="work-item">`];
-  out.push(`            <h3>${esc(item.title)}</h3>`);
-  if (String(item.meta || "").trim()) {
-    out.push(`            <p class="work-meta">${esc(item.meta)}</p>`);
-  }
-  if (String(item.description || "").trim()) {
-    out.push(`            <p>`);
-    out.push(`                ${esc(item.description)}`);
-    out.push(`            </p>`);
-  }
+/* ------------------------------------------------------------------ home */
+
+export function buildIndex(c) {
+  const { site, home } = c;
+  return (
+    head(site.name, c) +
+    `
+    <section class="hero">
+        <h1>${esc(home.heading)}</h1>
+        <p class="intro">${esc(home.intro)}</p>
+        <p class="personal">${esc(home.personal)}</p>
+        <div class="hero-photo">
+            <img src="${escAttr(home.photo)}" alt="${escAttr(home.photoAlt)}">
+        </div>
+    </section>
+
+    <hr class="rule">
+
+    <section class="prose">
+        <h2>${esc(home.currentWorkHeading)}</h2>
+${paragraphs(home.currentWork)}
+        <a href="work.html" class="btn">See My Work</a>
+
+        <h2>${esc(home.previousWorkHeading)}</h2>
+${paragraphs(home.previousWork)}
+        <a href="work.html" class="btn">See All Work</a>
+    </section>
+
+    <hr class="rule">
+
+    <section class="prose">
+        <h2>${esc(home.contactHeading)}</h2>
+        <div class="button-row">
+            <a href="${escAttr(site.cvFile)}" class="btn" download>
+                ${svg("download", 18)}
+                Download CV
+            </a>
+            <a href="contact.html" class="btn btn-quiet">Contact Me</a>
+        </div>
+    </section>
+` +
+    foot(site)
+  );
+}
+
+/* ------------------------------------------------- collection index pages */
+
+/** One card: image on the left, title, summary and Learn More on the right. */
+function card(collectionId, item) {
+  const out = [`            <article class="card">`];
+
   if (String(item.image || "").trim()) {
-    out.push(`            <figure class="project-shot">`);
+    out.push(`                <div class="card-media">`);
     out.push(
-      `                <img src="${escAttr(item.image)}" alt="${escAttr(item.imageAlt || item.title)}">`
+      `                    <img src="${escAttr(item.image)}" alt="${escAttr(item.imageAlt || item.title)}" loading="lazy">`
     );
-    if (String(item.caption || "").trim()) {
-      out.push(`                <figcaption>${esc(item.caption)}</figcaption>`);
-    }
-    out.push(`            </figure>`);
+    out.push(`                </div>`);
+  } else {
+    out.push(`                <div class="card-media card-media-empty" aria-hidden="true"></div>`);
   }
-  const bullets = (item.bullets || []).filter((b) => String(b).trim());
+
+  out.push(`                <div class="card-body">`);
+  out.push(`                    <h3>${esc(item.title)}</h3>`);
+  if (String(item.meta || "").trim())
+    out.push(`                    <p class="card-meta">${esc(item.meta)}</p>`);
+  if (String(item.summary || "").trim())
+    out.push(`                    <p class="card-summary">${esc(item.summary)}</p>`);
+  if (hasDetail(item))
+    out.push(
+      `                    <a class="learn-more" href="${escAttr(detailPath(collectionId, item.slug))}">Learn More</a>`
+    );
+  out.push(`                </div>`);
+  out.push(`            </article>`);
+  return out.join("\n");
+}
+
+export function buildCollection(c, collectionId) {
+  const { site } = c;
+  const col = c.collections[collectionId];
+  const items = col.items || [];
+
+  let body = `
+    <header class="page-header">
+        <h1>${esc(col.heading)}</h1>
+${String(col.intro || "").trim() ? `        <p class="page-intro">${esc(col.intro)}</p>\n` : ""}    </header>
+
+    <section class="cards">
+`;
+
+  const groups = (col.groups || []).filter((g) =>
+    items.some((it) => it.group === g.id)
+  );
+
+  if (groups.length) {
+    for (const g of groups) {
+      body += `        <h2 class="group-heading">${esc(g.heading)}</h2>\n`;
+      body += items
+        .filter((it) => it.group === g.id)
+        .map((it) => card(collectionId, it))
+        .join("\n");
+      body += "\n";
+    }
+    // Anything whose group was removed still needs to appear.
+    const orphans = items.filter(
+      (it) => !groups.some((g) => g.id === it.group)
+    );
+    if (orphans.length)
+      body += orphans.map((it) => card(collectionId, it)).join("\n") + "\n";
+  } else {
+    body += items.map((it) => card(collectionId, it)).join("\n") + "\n";
+  }
+
+  body += `    </section>
+`;
+
+  return head(`${col.heading} — ${site.name}`, c) + body + foot(site);
+}
+
+/* --------------------------------------------------------- detail pages */
+
+function section(s) {
+  const out = [`        <section class="detail-section">`];
+  if (String(s.heading || "").trim())
+    out.push(`            <h2>${esc(s.heading)}</h2>`);
+  const ps = paragraphs(s.paragraphs, "            ");
+  if (ps) out.push(ps);
+
+  const bullets = (s.bullets || []).filter((b) => String(b).trim());
   if (bullets.length) {
     out.push(`            <ul>`);
     for (const b of bullets) out.push(`                <li>${esc(b)}</li>`);
     out.push(`            </ul>`);
   }
-  out.push(`        </div>`);
+
+  if (String(s.image || "").trim()) {
+    out.push(`            <figure class="detail-figure">`);
+    out.push(
+      `                <img src="${escAttr(s.image)}" alt="${escAttr(s.imageAlt || s.heading || "")}" loading="lazy">`
+    );
+    if (String(s.caption || "").trim())
+      out.push(`                <figcaption>${esc(s.caption)}</figcaption>`);
+    out.push(`            </figure>`);
+  }
+
+  out.push(`        </section>`);
   return out.join("\n");
 }
 
-export function buildIndex(c) {
-  const { site, home } = c;
-  return (
-    head(site.name) +
-    `
-    <div class="side-nav">
-        <a href="#intro" title="Intro"></a>
-        <a href="#current-work" title="Work"></a>
-    </div>
-
-    <section class="hero" id="intro">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>${esc(home.heading)}</h1>
-                <p class="intro">
-                    ${esc(home.intro)}
-                </p>
-                <p class="personal">
-                    ${esc(home.personal)}
-                </p>
-            </div>
-            <div class="hero-photo">
-                <img src="${escAttr(home.photo)}" alt="${escAttr(home.photoAlt)}">
-            </div>
-        </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <section id="current-work">
-        <h2>${esc(home.currentWorkHeading)}</h2>
-${paragraphs(home.currentWork)}
-        <a href="work.html" class="btn">See My Work</a>
-
-        <h3>${esc(home.previousWorkHeading)}</h3>
-${paragraphs(home.previousWork)}
-        <a href="work.html" class="btn">See All Work</a>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <section class="contact-cta" id="contact">
-        <h2>${esc(home.contactHeading)}</h2>
-        <div class="contact-links">
-            <a href="${escAttr(site.cvFile)}" class="contact-link" download>
-                ${svg("download", 18)}
-                Download CV
-            </a>
-        </div>
-    </section>
-` +
-    footer(site) +
-    `
-    <script>
-        const sections = document.querySelectorAll('section');
-        const dots = document.querySelectorAll('.side-nav a');
-        function updateActiveDot() {
-            let current = '';
-            sections.forEach(section => {
-                const top = section.offsetTop - 200;
-                if (window.scrollY >= top) {
-                    current = section.getAttribute('id');
-                }
-            });
-            dots.forEach(dot => {
-                dot.classList.remove('active');
-                if (dot.getAttribute('href') === '#' + current) {
-                    dot.classList.add('active');
-                }
-            });
-        }
-        window.addEventListener('scroll', updateActiveDot);
-        updateActiveDot();
-    </script>
-</body>
-</html>
-`
-  );
-}
-
-export function buildWork(c) {
-  const { site, work } = c;
-  const projects = (c.projects || []).map(entry).join("\n\n");
-  const experience = (c.experience || []).map(entry).join("\n\n");
-
-  const education = (c.education || [])
-    .map(
-      (e) => `        <div class="edu-item">
-            <h3>${esc(e.degree)}</h3>
-            <p class="edu-school">${esc(e.school)}</p>
-            <p class="edu-details">${esc(e.details)}</p>
-        </div>`
-    )
-    .join("\n\n");
-
-  const skills = (c.skills || [])
-    .map(
-      (s) => `            <div class="skill-category">
-                <h4>${esc(s.category)}</h4>
-                <p>${esc(s.text)}</p>
-            </div>`
-    )
-    .join("\n");
+export function buildDetail(c, collectionId, item) {
+  const { site } = c;
+  const col = c.collections[collectionId];
 
   let body = `
-    <div class="page-header">
-        <h1>${esc(work.heading)}</h1>
+    <header class="page-header detail-header">
+        <a class="back-link" href="${collectionId}.html">← ${esc(col.heading)}</a>
+        <h1>${esc(item.title)}</h1>
+${String(item.tagline || "").trim() ? `        <p class="tagline">${esc(item.tagline)}</p>\n` : ""}${String(item.meta || "").trim() ? `        <p class="detail-meta">${esc(item.meta)}</p>\n` : ""}    </header>
+`;
+
+  if (String(item.image || "").trim()) {
+    body += `
+    <div class="detail-hero">
+        <img src="${escAttr(item.image)}" alt="${escAttr(item.imageAlt || item.title)}">
     </div>
-
-    <div class="work-section">
-`;
-
-  if (projects) {
-    body += `
-        <h2>${esc(work.projectsHeading)}</h2>
-
-${projects}
-`;
-  }
-  if (experience) {
-    body += `
-        <h2>${esc(work.experienceHeading)}</h2>
-
-${experience}
-`;
-  }
-  if (education) {
-    body += `
-        <h2>${esc(work.educationHeading)}</h2>
-
-${education}
-`;
-  }
-  if (skills) {
-    body += `
-        <h2>${esc(work.skillsHeading)}</h2>
-
-        <div class="skills-grid">
-${skills}
-        </div>
 `;
   }
 
   body += `
+    <div class="detail-body">
+${(item.sections || []).map(section).join("\n\n")}
+    </div>
+
+    <div class="detail-footer">
+        <a class="btn btn-quiet" href="${collectionId}.html">← Back to ${esc(col.heading)}</a>
     </div>
 `;
 
-  return head(`My Work — ${site.name}`) + body + footer(site) + `
-</body>
-</html>
-`;
+  return head(`${item.title} — ${site.name}`, c) + body + foot(site);
 }
+
+/* -------------------------------------------------------------- contact */
 
 export function buildContact(c) {
   const { site, contactPage } = c;
   return (
-    head(`Contact — ${site.name}`) +
+    head(`Contact — ${site.name}`, c) +
     `
-    <div class="contact-page">
+    <header class="page-header">
         <h1>${esc(contactPage.heading)}</h1>
+    </header>
 
-        <div class="contact-links">
-            <a href="${escAttr(site.linkedin)}" class="contact-link" target="_blank" rel="noopener">
+    <section class="prose">
+        <div class="button-row">
+            <a href="${escAttr(site.linkedin)}" class="btn" target="_blank" rel="noopener">
                 ${svg("linkedin", 18)}
                 LinkedIn
             </a>
-            <a href="mailto:${escAttr(site.email)}" class="contact-link">
+            <a href="mailto:${escAttr(site.email)}" class="btn">
                 ${svg("email", 18)}
                 Email Me
             </a>
-            <a href="${escAttr(site.cvFile)}" class="contact-link" download>
+            <a href="${escAttr(site.cvFile)}" class="btn" download>
                 ${svg("download", 18)}
                 Download CV
             </a>
         </div>
-    </div>
+    </section>
 ` +
-    footer(site) +
-    `
-</body>
-</html>
-`
+    foot(site)
   );
 }
 
+/* ------------------------------------------------------------------ all */
+
 /** Every generated file, keyed by the path it is written to in the repo. */
 export function buildAll(content) {
-  return {
+  const files = {
     "index.html": buildIndex(content),
-    "work.html": buildWork(content),
     "contact.html": buildContact(content),
     "content.json": JSON.stringify(content, null, 2) + "\n",
   };
+
+  for (const id of COLLECTIONS) {
+    files[`${id}.html`] = buildCollection(content, id);
+    for (const item of content.collections[id].items || []) {
+      if (hasDetail(item))
+        files[detailPath(id, item.slug)] = buildDetail(content, id, item);
+    }
+  }
+  return files;
 }
+
+export { COLLECTIONS };
