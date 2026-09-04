@@ -36,11 +36,11 @@
   "projects": [
     {
       "title": "PM Thinking Coach",
-      "meta": "Founder & Product Lead — 2025 – Present",
-      "description": "A learning app built from problem statement to a working end-to-end product: a PM skill tree of structured learning blocks and interactive decision scenarios to learn and evaluate your seniority level, on a SwiftUI client with a FastAPI + Postgres backend.",
+      "meta": "Founder & Product Lead; June 2026 – Present",
+      "description": "A learning app built from problem statement to a working end to end product: a PM skill tree of structured learning blocks and interactive decision scenarios to learn and evaluate your seniority level, on a SwiftUI client with a FastAPI + Postgres backend.",
       "image": "pm-thinking-coach.png",
-      "imageAlt": "PM Thinking Coach — the Map screen showing the skill tree of six domains across three rings",
-      "caption": "The Map — six domains across three rings, with the recommended next block on the right.",
+      "imageAlt": "PM Thinking Coach: the Map screen showing the skill tree of six domains across three rings",
+      "caption": "The Map: six domains across three rings, with the recommended next block on the right.",
       "bullets": [
         "Designed scoring to reward reasoning over answer-picking: rationale and communication carry 60 of 100 points against 25 for the decision itself",
         "Covered 7 competency tracks across three proficiency levels: product sense, analytics, user research, prioritization, execution, communication, and system design",
