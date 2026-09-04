@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Template check</title></head>
+<body>
+<pre id="out">running…</pre>
+<script type="module">
+import { buildAll } from "./templates.js";
+
+const out = document.getElementById("out");
+const lines = [];
+
+try {
+  const content = await (await fetch("../content.json")).json();
+  const built = buildAll(content);
+  let failures = 0;
+
+  for (const page of ["index.html", "work.html", "contact.html"]) {
+    const expected = await (await fetch("../" + page)).text();
+    const actual = built[page];
+
+    if (expected === actual) {
+      lines.push("ok    " + page);
+      continue;
+    }
+    failures++;
+    lines.push("DIFF  " + page);
+    const a = expected.split("\n");
+    const b = actual.split("\n");
+    let shown = 0;
+    for (let i = 0; i < Math.max(a.length, b.length) && shown < 12; i++) {
+      if (a[i] !== b[i]) {
+        shown++;
+        lines.push("  line " + (i + 1));
+        lines.push("    published: " + JSON.stringify(a[i] ?? "(missing)"));
+        lines.push("    generated: " + JSON.stringify(b[i] ?? "(missing)"));
+      }
+    }
+  }
+  lines.push("");
+  lines.push(failures ? failures + " page(s) differ." : "RESULT: all pages reproduce exactly.");
+} catch (err) {
+  lines.push("ERROR: " + (err && err.message ? err.message : String(err)));
+}
+
+out.textContent = lines.join("\n");
+</script>
+</body>
+</html>

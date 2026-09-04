@@ -1,0 +1,140 @@
+{
+  "site": {
+    "name": "Erdan Kudaibergen",
+    "email": "erdankud@bu.edu",
+    "linkedin": "https://www.linkedin.com/in/erdankudaibergen",
+    "cvFile": "Erdan-Kudaibergen-CV.pdf",
+    "copyright": "© 2025 Erdan Kudaibergen. All rights reserved."
+  },
+  "home": {
+    "heading": "Hi, I'm Erdan!",
+    "intro": "I'm a Product Manager passionate about building products that solve real problems for real people. With experience spanning fintech, healthtech, and marketplace products, I combine analytical thinking with user empathy to drive outcomes that matter.",
+    "personal": "When I am not working you can find me playing soccer, watching documentary films, or building side projects. I enjoy learning how things work and how they can be made better.",
+    "photo": "photo.jpg",
+    "photoAlt": "Photo of Erdan Kudaibergen",
+    "currentWorkHeading": "Current Work",
+    "currentWork": [
+      "I'm currently pursuing an MBA and MS in Digital Technology at Boston University's Questrom School of Business, while building products and taking on PM roles. Most recently, I worked as a Product Manager Intern at Rae Health, where I defined the company's first North Star metric and supporting metric tree for a live clinical wearable platform."
+    ],
+    "previousWorkHeading": "Previous Work",
+    "previousWork": [
+      "Before graduate school, I spent nearly four years as a Senior IT Project Manager at Attract Group, where I owned discovery-to-launch for 10+ client products across fintech, marketplace, and healthtech — managing cross-functional teams of up to 15 engineers and specialists.",
+      "On the side, I've been building the PM Thinking Coach — a learning app with a structured PM skill tree, 159 lessons, 36 simulation scenarios, and a 515-term glossary, built on SwiftUI and FastAPI."
+    ],
+    "contactHeading": "Get in Touch"
+  },
+  "contactPage": {
+    "heading": "Get in touch"
+  },
+  "work": {
+    "heading": "My Work",
+    "projectsHeading": "Product Projects",
+    "experienceHeading": "Work Experience",
+    "educationHeading": "Education",
+    "skillsHeading": "Skills"
+  },
+  "projects": [
+    {
+      "title": "PM Thinking Coach",
+      "meta": "Founder & Product Lead — 2025 – Present",
+      "description": "A learning app built from problem statement to a working end-to-end product: a PM skill tree of structured learning blocks and interactive decision scenarios to learn and evaluate your seniority level, on a SwiftUI client with a FastAPI + Postgres backend.",
+      "image": "pm-thinking-coach.png",
+      "imageAlt": "PM Thinking Coach — the Map screen showing the skill tree of six domains across three rings",
+      "caption": "The Map — six domains across three rings, with the recommended next block on the right.",
+      "bullets": [
+        "Designed scoring to reward reasoning over answer-picking: rationale and communication carry 60 of 100 points against 25 for the decision itself",
+        "Covered 7 competency tracks across three proficiency levels: product sense, analytics, user research, prioritization, execution, communication, and system design",
+        "Total of 159 lessons, 36 simulation scenarios, and a 515-term glossary",
+        "Implemented an audio overview feature that narrates lessons and coaching feedback for hands-free review",
+        "Defined the beta success metrics: activation, time to first value, D7 repeat practice, and feedback usefulness"
+      ]
+    }
+  ],
+  "experience": [
+    {
+      "title": "Rae Health",
+      "meta": "Product Manager Intern — Bristol, ME — June 2026 to September 2026",
+      "description": "Worked on a live clinical wearable platform, defining foundational product metrics and validating growth strategy through data analysis and customer research.",
+      "image": "",
+      "imageAlt": "",
+      "caption": "",
+      "bullets": [
+        "Defined the company's first North Star metric and supporting metric tree (Reach → Activation → Retention → Clinical Engagement)",
+        "Analyzed event-level data (85 patients, ~91,000 detection events, 6 months) to compute the product's first measured baseline",
+        "Stress-tested the ROI model behind the company's growth strategy: traced each figure to source, formula, or \"unverifiable\"",
+        "Ran 6 customer interviews alongside usability studies to validate hypotheses before committing engineering capacity"
+      ]
+    },
+    {
+      "title": "Questrom Consulting Lab",
+      "meta": "Project Manager — Boston, MA — June 2026 to Present",
+      "description": "",
+      "image": "",
+      "imageAlt": "",
+      "caption": "",
+      "bullets": [
+        "Mapped 150+ back-office systems across 9 departments via 8 stakeholder interviews; built a systems-relationship tool surfacing $700K in projected annual savings from redundant tooling",
+        "Led the development of an enterprise AI knowledge assistant and RAG solution while coordinating project execution, technical workstreams, deliverables, and stakeholder alignment"
+      ]
+    },
+    {
+      "title": "Attract Group",
+      "meta": "Senior IT Project Manager — Las Vegas, NV — June 2021 to March 2025",
+      "description": "Owned discovery to launch for 10+ client products across fintech, marketplace, and healthtech, leading cross-functional teams of up to 15 developers and specialists.",
+      "image": "",
+      "imageAlt": "",
+      "caption": "",
+      "bullets": [
+        "Ran requirements, functional decomposition, and MVP scoping on engagements up to $400K",
+        "Owned product and project backlog, including feature prioritization and task estimation — leading to on-time delivery of 90% of projects",
+        "Controlled project delivery timelines, roadmaps, and resource allocation to ensure 0% budget loss",
+        "Utilized Agile Scrum methodology in 3 large teams to maintain development efficiency",
+        "Defined technical specs; aligned architecture with business goals",
+        "Served as a mentor for junior managers, providing guidance and support"
+      ]
+    },
+    {
+      "title": "European American Business Organization",
+      "meta": "Project Manager Assistant — New York City, NY — September 2019 to March 2020",
+      "description": "",
+      "image": "",
+      "imageAlt": "",
+      "caption": "",
+      "bullets": [
+        "Spearheaded strategic partnership search, identifying and evaluating potential collaborations. Found and contacted 500+ cold leads",
+        "Responded to inquiries related to cross-border market entry, offering insights and guidance for 6 clients",
+        "Coordinated and facilitated 10+ B2B and B2C meetings, contributing to business interactions and partnerships"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "MBA and MS Digital Technology",
+      "school": "Boston University, Questrom School of Business — Boston, MA",
+      "details": "Expected May 2027 — Relevant Coursework: Digital Product Build, Systems Architecture, Gen AI in Business, Python, SQL, Machine Learning, Deep Learning"
+    },
+    {
+      "degree": "BA Economics",
+      "school": "Bard College — Annandale-On-Hudson, NY",
+      "details": "May 2021"
+    }
+  ],
+  "skills": [
+    {
+      "category": "Product",
+      "text": "Discovery & customer interviews, PRDs, roadmapping, RICE prioritization, A/B testing & experiment design, competitive analysis, leading cross-functional teams"
+    },
+    {
+      "category": "Data & AI",
+      "text": "SQL, Python (pandas), Tableau, Excel, Amplitude; RAG architecture, LLM evaluation & prompt design, Claude Code, model tradeoffs (latency/cost/quality)"
+    },
+    {
+      "category": "Tools",
+      "text": "Jira, Confluence, Figma, Linear; Professional Scrum Master I (PSM I)"
+    },
+    {
+      "category": "Languages",
+      "text": "English (Fluent), Russian (Native)"
+    }
+  ]
+}

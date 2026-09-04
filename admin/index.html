@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Site Admin — Erdan Kudaibergen</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body data-connected="false">
+
+<header class="topbar">
+    <div class="brand">
+        <strong>Site Admin</strong>
+        <a id="site-link" href="#" target="_blank" rel="noopener">View site ↗</a>
+    </div>
+    <div class="topbar-right">
+        <span id="connected-as" class="muted"></span>
+        <button type="button" id="disconnect" class="ghost">Sign out</button>
+    </div>
+</header>
+
+<!-- Sign-in ------------------------------------------------------------- -->
+<main id="signin" class="signin">
+    <form id="connect-form" class="card-panel">
+        <h1>Connect to GitHub</h1>
+        <p class="lead">
+            This panel edits your site by committing to its repository. It needs a
+            personal access token with permission to write to that one repository.
+        </p>
+
+        <div class="field">
+            <label for="f-owner">Owner</label>
+            <input type="text" id="f-owner" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="field">
+            <label for="f-repo">Repository</label>
+            <input type="text" id="f-repo" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="field">
+            <label for="f-branch">Branch</label>
+            <input type="text" id="f-branch" autocomplete="off" spellcheck="false">
+        </div>
+        <div class="field">
+            <label for="f-token">Access token</label>
+            <input type="password" id="f-token" autocomplete="off" spellcheck="false"
+                   placeholder="github_pat_…">
+            <p class="hint">
+                Create one at <strong>GitHub → Settings → Developer settings → Personal
+                access tokens → Fine-grained tokens</strong>. Under
+                <em>Repository access</em> pick only this repository, and under
+                <em>Permissions</em> set <strong>Contents: Read and write</strong>.
+                Nothing else is needed.
+            </p>
+        </div>
+
+        <label class="check">
+            <input type="checkbox" id="f-remember">
+            Stay signed in on this device
+        </label>
+        <p class="hint">
+            The token is kept in this browser only and is sent nowhere except
+            github.com. Leave this unticked on a shared computer.
+        </p>
+
+        <button type="submit" class="primary">Connect</button>
+        <p id="status-connect" class="status" hidden></p>
+    </form>
+</main>
+
+<!-- Editor -------------------------------------------------------------- -->
+<main id="editor" class="editor">
+    <nav class="tabs">
+        <button type="button" class="tab active" data-panel="home">Home</button>
+        <button type="button" class="tab" data-panel="projects">Projects</button>
+        <button type="button" class="tab" data-panel="experience">Experience</button>
+        <button type="button" class="tab" data-panel="education">Education</button>
+        <button type="button" class="tab" data-panel="skills">Skills</button>
+        <button type="button" class="tab" data-panel="site">Site &amp; contact</button>
+    </nav>
+
+    <section class="panels">
+        <div id="panel-home" class="panel active"></div>
+        <div id="panel-projects" class="panel"></div>
+        <div id="panel-experience" class="panel"></div>
+        <div id="panel-education" class="panel"></div>
+        <div id="panel-skills" class="panel"></div>
+        <div id="panel-site" class="panel"></div>
+    </section>
+
+    <aside class="actions">
+        <div class="actions-inner">
+            <span id="dirty-flag" class="badge warn" hidden>Unpublished changes</span>
+
+            <div class="field">
+                <label for="preview-page">Preview</label>
+                <div class="row">
+                    <select id="preview-page">
+                        <option value="index.html">Home</option>
+                        <option value="work.html">Work</option>
+                        <option value="contact.html">Contact</option>
+                    </select>
+                    <button type="button" id="preview">Open</button>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="commit-message">Change note (optional)</label>
+                <input type="text" id="commit-message"
+                       placeholder="Update site content from the admin panel">
+            </div>
+
+            <button type="button" id="publish" class="primary" disabled>Publish to site</button>
+            <button type="button" id="download" class="ghost">Download files instead</button>
+            <p id="status-publish" class="status" hidden></p>
+        </div>
+    </aside>
+</main>
+
+<dialog id="preview-dialog">
+    <div class="preview-head">
+        <strong>Preview</strong>
+        <button type="button" id="close-preview">Close</button>
+    </div>
+    <iframe id="preview-frame" title="Site preview"></iframe>
+</dialog>
+
+<script type="module" src="admin.js"></script>
+</body>
+</html>
