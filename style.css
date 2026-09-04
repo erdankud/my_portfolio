@@ -305,6 +305,12 @@ a { color: var(--accent); }
 
 .detail-hero { margin: 40px 0 10px; }
 
+.detail-hero figcaption {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 10px;
+}
+
 .detail-hero img {
     width: 100%;
     height: auto;

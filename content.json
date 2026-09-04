@@ -18,8 +18,8 @@
     ],
     "previousWorkHeading": "Previous Work",
     "previousWork": [
-      "Before graduate school, I spent nearly four years as a Senior IT Project Manager at Attract Group, where I owned discovery-to-launch for 10+ client products across fintech, marketplace, and healthtech — managing cross-functional teams of up to 15 engineers and specialists.",
-      "On the side, I've been building the PM Thinking Coach — a learning app with a structured PM skill tree, 159 lessons, 36 simulation scenarios, and a 515-term glossary, built on SwiftUI and FastAPI."
+      "Before graduate school, I spent nearly four years as a Senior IT Project Manager at Attract Group, where I owned the discovery to launch process for 10+ client products across fintech, marketplace, and healthtech, managing cross functional teams of up to 15 engineers and specialists.",
+      "On the side, I've been building the PM Thinking Coach. It is a learning app with a structured PM skill tree, 159 lessons, 36 simulation scenarios, and a 515-term glossary, built on SwiftUI and FastAPI."
     ],
     "contactHeading": "Get in Touch"
   },
@@ -46,16 +46,16 @@
           "slug": "pm-thinking-coach",
           "group": "projects",
           "title": "PM Thinking Coach",
-          "meta": "Founder & Product Lead — 2025 – Present",
+          "meta": "Founder & Product Lead; June 2026 – Present",
           "summary": "A learning app that turns the product management skill map into a route: structured lessons, then a real situation with incomplete data that checks you can apply the skill.",
           "image": "pm-thinking-coach.png",
-          "imageAlt": "The Map screen of PM Thinking Coach, showing six domains across three rings",
+          "imageAlt": "PM Thinking Coach: the Map screen showing the skill tree of six domains across three rings",
           "tagline": "Turning the PM skill map into a route you can walk",
           "sections": [
             {
               "heading": "What it is",
               "paragraphs": [
-                "A learning app built from problem statement to a working end-to-end product: a PM skill tree of structured learning blocks and interactive decision scenarios to learn and evaluate your seniority level, on a SwiftUI client with a FastAPI + Postgres backend."
+                "A learning app built from problem statement to a working end to end product: a PM skill tree of structured learning blocks and interactive decision scenarios to learn and evaluate your seniority level, on a SwiftUI client with a FastAPI + Postgres backend."
               ],
               "bullets": [],
               "image": "",
@@ -87,15 +87,16 @@
               "imageAlt": "",
               "caption": ""
             }
-          ]
+          ],
+          "caption": "The Map: six domains across three rings, with the recommended next block on the right."
         },
         {
           "slug": "rae-health",
           "group": "experience",
           "title": "Rae Health",
-          "meta": "Product Manager Intern — Bristol, ME — June 2026 to September 2026",
+          "meta": "Product Manager Intern; Bristol, ME. June 2026 - September 2026",
           "summary": "Defined the first North Star metric and metric tree for a live clinical wearable platform, and pressure-tested the ROI model behind the growth strategy.",
-          "image": "",
+          "image": "Screenshot-2026-09-04-at-7.10.01-PM.png",
           "imageAlt": "",
           "tagline": "Giving a clinical wearable platform its first real baseline",
           "sections": [
@@ -128,9 +129,9 @@
           "slug": "questrom-consulting-lab",
           "group": "experience",
           "title": "Questrom Consulting Lab",
-          "meta": "Project Manager — Boston, MA — June 2026 to Present",
-          "summary": "Mapped 150+ back-office systems across 9 departments and surfaced $700K in projected annual savings, while leading an enterprise AI knowledge assistant.",
-          "image": "",
+          "meta": "Project Manager; Boston, MA. June 2026 - Present",
+          "summary": "Served as a Project Manager of consulting services provided to the clients from Tech industry ",
+          "image": "Screenshot-2026-09-04-at-7.14.07-PM.png",
           "imageAlt": "",
           "tagline": "Finding the redundant tooling hiding across nine departments",
           "sections": [
@@ -151,7 +152,7 @@
           "slug": "attract-group",
           "group": "experience",
           "title": "Attract Group",
-          "meta": "Senior IT Project Manager — Las Vegas, NV — June 2021 to March 2025",
+          "meta": "Senior IT Project Manager; Las Vegas, NV. June 2021 - March 2025",
           "summary": "Owned discovery to launch for 10+ client products across fintech, marketplace and healthtech, leading cross-functional teams of up to 15 people.",
           "image": "",
           "imageAlt": "",
@@ -172,7 +173,7 @@
               "paragraphs": [],
               "bullets": [
                 "Ran requirements, functional decomposition, and MVP scoping on engagements up to $400K",
-                "Owned product and project backlog, including feature prioritization and task estimation — leading to on-time delivery of 90% of projects",
+                "Owned product and project backlog, including feature prioritization and task estimation, leading to on-time delivery of 90% of projects",
                 "Controlled project delivery timelines, roadmaps, and resource allocation to ensure 0% budget loss",
                 "Utilized Agile Scrum methodology in 3 large teams to maintain development efficiency",
                 "Defined technical specs; aligned architecture with business goals",
@@ -188,7 +189,7 @@
           "slug": "european-american-business-organization",
           "group": "experience",
           "title": "European American Business Organization",
-          "meta": "Project Manager Assistant — New York City, NY — September 2019 to March 2020",
+          "meta": "Project Manager Assistant; New York City, NY. September 2019 - March 2020",
           "summary": "Sourced and evaluated cross-border partnerships, and supported clients entering new markets.",
           "image": "",
           "imageAlt": "",

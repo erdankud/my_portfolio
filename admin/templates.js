@@ -293,9 +293,9 @@ ${String(item.tagline || "").trim() ? `        <p class="tagline">${esc(item.tag
 
   if (String(item.image || "").trim()) {
     body += `
-    <div class="detail-hero">
+    <figure class="detail-hero">
         <img src="${escAttr(item.image)}" alt="${escAttr(item.imageAlt || item.title)}">
-    </div>
+${String(item.caption || "").trim() ? `        <figcaption>${esc(item.caption)}</figcaption>\n` : ""}    </figure>
 `;
   }
 

@@ -98,6 +98,7 @@ function migrate(c) {
       item.summary ??= "";
       item.image ??= "";
       item.imageAlt ??= "";
+      item.caption ??= "";
       item.tagline ??= "";
       item.sections ||= [];
       for (const s of item.sections) {
@@ -395,6 +396,7 @@ const BLANK_ITEM = {
   summary: "",
   image: "",
   imageAlt: "",
+  caption: "",
   tagline: "",
   sections: [],
 };
@@ -458,6 +460,9 @@ function itemFields(collectionId, col, item, redraw) {
       hint: "Shown on the card at a fixed 16:10 crop, and at the top of the detail page.",
     }),
     field("Image alt text", item, "imageAlt"),
+    field("Image caption", item, "caption", {
+      hint: "Shown under the image on the detail page.",
+    }),
     el("hr"),
     field("Tagline", item, "tagline", {
       hint: "The italic line under the title on the detail page.",
