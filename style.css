@@ -344,10 +344,15 @@ a { color: var(--accent); }
 
 .detail-figure { margin: 28px 0 4px; }
 
+/* A portrait screenshot would run past 1300px tall in this column, so cap the
+   height and let the image shrink to fit, centred. */
 .detail-figure img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
+    max-height: 640px;
     height: auto;
     display: block;
+    margin: 0 auto;
     border: 1px solid var(--line);
 }
 
