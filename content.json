@@ -155,7 +155,7 @@
           "group": "experience",
           "title": "Attract Group",
           "meta": "Senior IT Project Manager; Las Vegas, NV. June 2021 - March 2025",
-          "summary": "Owned discovery to launch for 10+ client products across fintech, marketplace and healthtech, leading cross-functional teams of up to 15 people.",
+          "summary": "Owned discovery to launch for 10+ client products across fintech, marketplace and healthtech — Rae Health, Wild Atlantic Health, Curbside Kitchen and Infento among them — leading cross-functional teams of up to 15 people.",
           "image": "ChatGPT-Image-Sep-5--2026--04_28_10-PM.png",
           "imageAlt": "",
           "tagline": "Four years of shipping client products end to end",
@@ -180,6 +180,77 @@
                 "Utilized Agile Scrum methodology in 3 large teams to maintain development efficiency",
                 "Defined technical specs; aligned architecture with business goals",
                 "Served as a mentor for junior managers, providing guidance and support"
+              ],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            },
+            {
+              "heading": "Projects I led",
+              "paragraphs": [
+                "Four of the products I ran at Attract Group have published case studies. Each figure below comes from the client work as the agency published it."
+              ],
+              "bullets": [],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            },
+            {
+              "heading": "Rae Health — stress and craving management on wearables",
+              "paragraphs": [
+                "A healthcare platform that pairs patented biomarker wearables with mobile apps and a clinical web portal, so patients can see what triggers a craving and clinicians can adjust treatment on real data. The largest engagement I ran: 24+ months and a $200,000+ budget."
+              ],
+              "bullets": [
+                "Automatic detection of stress and craving events from wearable biomarkers, with manual entry so nothing goes unrecorded",
+                "Calendar and statistics views that turn individual events into patterns a clinician can act on",
+                "RAE Connect for caregivers and support networks, and a web clinical portal for reviewing patient data and tuning care plans",
+                "Flutter and the Garmin SDK on mobile; Java, Spring Boot, PostgreSQL and AWS behind it"
+              ],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            },
+            {
+              "heading": "Wild Atlantic Health — home testing and supplement commerce",
+              "paragraphs": [
+                "An Irish platform that closes the loop from a home blood test to the supplement that answers it: activate a kit, send the sample, get doctor-reviewed results, and buy what the results recommend. Six months, $80,000+."
+              ],
+              "bullets": [
+                "Third-party laboratory integration returning doctor-reviewed vitamin D and omega-3 insights within 7 working days",
+                "A recommendation flow tying each test result to specific products, rather than a generic catalogue",
+                "Stripe checkout, delivery tracking and reviews, with an admin panel for orders and content",
+                "Laravel on the backend, React on the frontend, Flutter on mobile"
+              ],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            },
+            {
+              "heading": "Curbside Kitchen — a marketplace for food trucks",
+              "paragraphs": [
+                "Office cafeterias are expensive to run. Curbside Kitchen lets property managers book food trucks instead, and gives truck owners a steady stream of bookings. A role-based marketplace for property owners, truck owners, office workers and administrators. Eleven months, $50,000–$100,000."
+              ],
+              "bullets": [
+                "A scheduler and event management flow that matches requests to suitable trucks without manual back-and-forth",
+                "Stripe payments and invoicing, plus disputes, auto-refunds and rating management",
+                "SMS and email campaigns through Twilio, Mailgun and ActiveCampaign; Google and Apple Calendar sync",
+                "Reached 2,000+ completed events, 400+ more planned, 200 registered trucks and around 100 properties",
+                "Django and PostgreSQL"
+              ],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            },
+            {
+              "heading": "Infento — e-commerce optimisation for modular ride kits",
+              "paragraphs": [
+                "Six months of continuous improvement on a live WooCommerce store, aimed at retention and conversion rather than a rebuild. The brief was to keep shipping measurable improvements to an existing product."
+              ],
+              "bullets": [
+                "Rebuilt the customer account: purchase history, document downloads, and planning upgrades to a kit already owned",
+                "Currency conversion for international buyers, automated invoicing, and order export for operations",
+                "Organisation purchases for business customers, and Google Analytics instrumentation to steer the work",
+                "WordPress and WooCommerce"
               ],
               "image": "",
               "imageAlt": "",
