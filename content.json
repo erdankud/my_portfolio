@@ -123,7 +123,8 @@
               "imageAlt": "",
               "caption": ""
             }
-          ]
+          ],
+          "caption": ""
         },
         {
           "slug": "questrom-consulting-lab",
@@ -146,7 +147,8 @@
               "imageAlt": "",
               "caption": ""
             }
-          ]
+          ],
+          "caption": ""
         },
         {
           "slug": "attract-group",
@@ -183,7 +185,8 @@
               "imageAlt": "",
               "caption": ""
             }
-          ]
+          ],
+          "caption": ""
         },
         {
           "slug": "european-american-business-organization",
@@ -208,7 +211,8 @@
               "imageAlt": "",
               "caption": ""
             }
-          ]
+          ],
+          "caption": ""
         }
       ]
     },
@@ -221,17 +225,41 @@
         {
           "slug": "boston-university",
           "group": "",
-          "title": "Boston University",
-          "meta": "MBA and MS Digital Technology — Questrom School of Business — Expected May 2027",
-          "summary": "Two degrees in parallel: an MBA alongside an MS in Digital Technology, with coursework spanning product build, systems architecture and machine learning.",
-          "image": "",
+          "title": "MBA - Questrom School of Business",
+          "meta": "Boston University",
+          "summary": "",
+          "image": "BOSTON-UNIVERSITY-CAMPUS-ALONG-CHARLES-RIVER-0983-resize-1400x788-1-768x609.jpg",
           "imageAlt": "",
-          "tagline": "MBA and MS Digital Technology, Boston, MA",
+          "tagline": "MBA, Boston, MA",
           "sections": [
             {
               "heading": "Coursework",
               "paragraphs": [
-                "Digital Product Build, Systems Architecture, Gen AI in Business, Python, SQL, Machine Learning, Deep Learning, and others."
+                "Managing Organizations and People; Business Analytics - Data Analysis and Risk; Data Driven Marketing; Competition, Innovation and Strategy; and others."
+              ],
+              "bullets": [],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            }
+          ],
+          "caption": ""
+        },
+        {
+          "slug": "boston-university-msdt",
+          "group": "",
+          "title": "MS in Digital Technology ",
+          "meta": "Boston University",
+          "summary": "",
+          "image": "BOSTON-UNIVERSITY-CAMPUS-ALONG-CHARLES-RIVER-0983-resize-1400x788-1-768x609.jpg",
+          "imageAlt": "",
+          "caption": "",
+          "tagline": "MS in Digital Technology, Boston, MA",
+          "sections": [
+            {
+              "heading": "Coursework",
+              "paragraphs": [
+                "Digital Product Build; Systems Architecture; Gen AI in Business; Python; SQL; Machine Learning; Deep Learning; and others."
               ],
               "bullets": [],
               "image": "",
@@ -244,12 +272,13 @@
           "slug": "bard-college",
           "group": "",
           "title": "Bard College",
-          "meta": "BA Economics — Annandale-On-Hudson, NY — May 2021",
-          "summary": "BA in Economics, with a focus on how markets and incentives shape behaviour.",
+          "meta": "BA Economics; Annandale On Hudson, NY",
+          "summary": "",
           "image": "",
           "imageAlt": "",
           "tagline": "BA Economics, Annandale-On-Hudson, NY",
-          "sections": []
+          "sections": [],
+          "caption": ""
         }
       ]
     },
@@ -268,7 +297,8 @@
           "image": "",
           "imageAlt": "",
           "tagline": "",
-          "sections": []
+          "sections": [],
+          "caption": ""
         },
         {
           "slug": "data-and-ai",
@@ -279,7 +309,8 @@
           "image": "",
           "imageAlt": "",
           "tagline": "",
-          "sections": []
+          "sections": [],
+          "caption": ""
         },
         {
           "slug": "tools",
@@ -290,7 +321,8 @@
           "image": "",
           "imageAlt": "",
           "tagline": "",
-          "sections": []
+          "sections": [],
+          "caption": ""
         },
         {
           "slug": "languages",
@@ -301,7 +333,8 @@
           "image": "",
           "imageAlt": "",
           "tagline": "",
-          "sections": []
+          "sections": [],
+          "caption": ""
         }
       ]
     }
