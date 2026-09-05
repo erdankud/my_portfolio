@@ -131,17 +131,44 @@
           "group": "experience",
           "title": "Questrom Consulting Lab",
           "meta": "Project Manager; Boston, MA. June 2026 - Present",
-          "summary": "Served as a Project Manager, overseeing the delivery of consulting services to clients in the technology industry.",
+          "summary": "Project manager on two client engagements out of Boston University's consulting lab: a back-office systems audit for LinkSquares, and an enterprise AI knowledge assistant for Sikich.",
           "image": "Screenshot-2026-09-04-at-7.14.07-PM.png",
           "imageAlt": "",
-          "tagline": "Finding the redundant tooling hiding across nine departments",
+          "tagline": "Two client engagements, from stakeholder interviews to shipped tooling",
           "sections": [
             {
-              "heading": "What I did",
-              "paragraphs": [],
+              "heading": "Overview",
+              "paragraphs": [
+                "Questrom Consulting Lab pairs graduate teams with companies on real problems on a fixed timeline. I ran two engagements, both with technology clients, covering stakeholder discovery, scoping, delivery and the hand-off at the end."
+              ],
+              "bullets": [],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            },
+            {
+              "heading": "LinkSquares — mapping the back office",
+              "paragraphs": [
+                "LinkSquares is a Boston company building AI-powered contract lifecycle management software, founded in 2015 and used by more than 1,200 customers including DraftKings, Wayfair and TIME. It has raised roughly $164M, including a $100M Series C in 2022.",
+                "Fast growth leaves a company buying tools faster than it retires them. The engagement was to find out what the business actually runs on, and where the same job was being paid for twice."
+              ],
               "bullets": [
-                "Mapped 150+ back-office systems across 9 departments via 8 stakeholder interviews; built a systems-relationship tool surfacing $700K in projected annual savings from redundant tooling",
-                "Led the development of an enterprise AI knowledge assistant and RAG solution while coordinating project execution, technical workstreams, deliverables, and stakeholder alignment"
+                "Mapped 150+ back-office systems across 9 departments through 8 stakeholder interviews",
+                "Built a systems-relationship tool that surfaced $700K in projected annual savings from redundant tooling"
+              ],
+              "image": "",
+              "imageAlt": "",
+              "caption": ""
+            },
+            {
+              "heading": "Sikich — an enterprise AI knowledge assistant",
+              "paragraphs": [
+                "Sikich is a Chicago-based professional services firm founded in 1982, offering accounting, advisory, technology and managed services, and ranked 27th on Accounting Today's Top 100 firms.",
+                "A firm that size holds most of its expertise in documents and in people's heads. The engagement was to make that knowledge answerable — a retrieval-augmented assistant staff could ask directly, rather than a search box over a file share."
+              ],
+              "bullets": [
+                "Led development of the enterprise AI knowledge assistant and its RAG solution",
+                "Coordinated project execution, technical workstreams, deliverables and stakeholder alignment across the engagement"
               ],
               "image": "",
               "imageAlt": "",
