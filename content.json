@@ -117,7 +117,7 @@
                 "The product is built for three audiences at once — people in recovery, the treatment providers and care teams supporting them, and employers running wellness programmes. The company is supported by the National Institutes of Health and UT Tyler, runs a study with UMass Medical School and Garmin, and holds two US patents."
               ],
               "bullets": [],
-              "image": "rae-product.jpg",
+              "image": "Screenshot-2026-09-05-at-6.32.27-PM.png",
               "imageAlt": "The RAE Health site, showing the tagline “Realize. Analyze. Engage.” and the wearable band",
               "caption": "Realize, Analyze, Engage — and the band that does the reading."
             },
@@ -128,7 +128,7 @@
                 "Nothing is left to the sensor alone: a patient can log an event by hand, which both fills the gaps and gives the models something to be checked against."
               ],
               "bullets": [],
-              "image": "rae-app-event.jpg",
+              "image": "Screenshot-2026-09-05-at-6.29.13-PM.png",
               "imageAlt": "The RAE app capturing a stress event step by step, next to a calendar of event trends",
               "caption": "Capturing an event, and the trends it feeds."
             },
@@ -152,7 +152,7 @@
                 "Stress-tested the ROI model behind the company's growth strategy: traced each figure to source, formula, or \"unverifiable\", then recomputed break-even and reframed the claim before it reached prospects",
                 "Ran 6 customer interviews alongside usability studies to validate hypotheses before committing engineering capacity, and turned a gap in the acquisition funnel into a scoped backlog item"
               ],
-              "image": "rae-app-analytics.jpg",
+              "image": "",
               "imageAlt": "The RAE app showing stress event intensity and event counts broken down by time of day",
               "caption": "The analytics the baseline came out of: event intensity and counts by time of day."
             }
@@ -189,7 +189,7 @@
                 "Mapped 150+ back-office systems across 9 departments through 8 stakeholder interviews",
                 "Built a systems-relationship tool that surfaced $700K in projected annual savings from redundant tooling"
               ],
-              "image": "client-linksquares.jpg",
+              "image": "Screenshot-2026-09-05-at-6.34.06-PM.png",
               "imageAlt": "The LinkSquares site, showing its contract management platform and customer logos",
               "caption": "LinkSquares sells contract lifecycle management to legal teams at companies like DraftKings, TIME and Wayfair."
             },
@@ -203,7 +203,7 @@
                 "Led development of the enterprise AI knowledge assistant and its RAG solution",
                 "Coordinated project execution, technical workstreams, deliverables and stakeholder alignment across the engagement"
               ],
-              "image": "client-sikich.jpg",
+              "image": "2020-07-23-Sikich.webp",
               "imageAlt": "The Sikich site, with the headline “Turn complex challenges into simple solutions”",
               "caption": "Sikich: accounting, advisory, technology and managed services, from Chicago."
             }
