@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img" aria-label="A network of nodes in three layers, connected by lines">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5f5f7"/>
+      <stop offset="1" stop-color="#eaeaec"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+
+  <!-- edges: input layer to hidden layer -->
+  <g stroke="#16161d" stroke-width="1.1" opacity="0.16">
+    <path d="M200 150 L400 120 M200 150 L400 210 M200 150 L400 300 M200 150 L400 380"/>
+    <path d="M200 250 L400 120 M200 250 L400 210 M200 250 L400 300 M200 250 L400 380"/>
+    <path d="M200 350 L400 120 M200 350 L400 210 M200 350 L400 300 M200 350 L400 380"/>
+  </g>
+
+  <!-- edges: hidden layer to output -->
+  <g stroke="#16161d" stroke-width="1.1" opacity="0.16">
+    <path d="M400 120 L600 200 M400 120 L600 320"/>
+    <path d="M400 210 L600 200 M400 210 L600 320"/>
+    <path d="M400 300 L600 200 M400 300 L600 320"/>
+    <path d="M400 380 L600 200 M400 380 L600 320"/>
+  </g>
+
+  <!-- the path that carries -->
+  <path d="M200 250 L400 210 L600 200" fill="none" stroke="#3f6fb5" stroke-width="2" opacity="0.55"
+        stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- input layer -->
+  <g fill="#f5f5f7" stroke="#16161d" stroke-width="2">
+    <circle cx="200" cy="150" r="9"/>
+    <circle cx="200" cy="250" r="9"/>
+    <circle cx="200" cy="350" r="9"/>
+  </g>
+
+  <!-- hidden layer -->
+  <g fill="#f5f5f7" stroke="#16161d" stroke-width="2">
+    <circle cx="400" cy="120" r="9"/>
+    <circle cx="400" cy="210" r="9"/>
+    <circle cx="400" cy="300" r="9"/>
+    <circle cx="400" cy="380" r="9"/>
+  </g>
+
+  <!-- output -->
+  <circle cx="600" cy="320" r="9" fill="#f5f5f7" stroke="#16161d" stroke-width="2"/>
+  <circle cx="600" cy="200" r="22" fill="none" stroke="#3f6fb5" stroke-width="1.5" opacity="0.35"/>
+  <circle cx="600" cy="200" r="10" fill="#3f6fb5"/>
+</svg>

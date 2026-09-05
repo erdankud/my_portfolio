@@ -294,8 +294,8 @@
           "title": "Product",
           "meta": "Discovery, definition and delivery",
           "summary": "Discovery & customer interviews, PRDs, roadmapping, RICE prioritization, A/B testing & experiment design, competitive analysis, leading cross-functional teams.",
-          "image": "",
-          "imageAlt": "",
+          "image": "skill-product.svg",
+          "imageAlt": "A route of connected points rising from left to right, the last one marked",
           "tagline": "",
           "sections": [],
           "caption": ""
@@ -306,8 +306,8 @@
           "title": "Data & AI",
           "meta": "Analysis and applied AI",
           "summary": "SQL, Python (pandas), Tableau, Excel, Amplitude; RAG architecture, LLM evaluation & prompt design, Claude Code, model tradeoffs (latency/cost/quality).",
-          "image": "",
-          "imageAlt": "",
+          "image": "skill-data-ai.svg",
+          "imageAlt": "A network of nodes in three layers, with one path through it highlighted",
           "tagline": "",
           "sections": [],
           "caption": ""
@@ -318,8 +318,8 @@
           "title": "Tools & Certifications",
           "meta": "Day-to-day toolkit",
           "summary": "Jira, Confluence, Figma, Linear; Professional Scrum Master I (PSM I).",
-          "image": "",
-          "imageAlt": "",
+          "image": "skill-tools.svg",
+          "imageAlt": "A grid of modular tiles, one marked with a check and one still empty",
           "tagline": "",
           "sections": [],
           "caption": ""
@@ -330,8 +330,8 @@
           "title": "Languages",
           "meta": "",
           "summary": "English (Fluent), Russian (Native).",
-          "image": "",
-          "imageAlt": "",
+          "image": "skill-languages.svg",
+          "imageAlt": "Two overlapping speech bubbles, each holding lines of text",
           "tagline": "",
           "sections": [],
           "caption": ""
