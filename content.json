@@ -55,9 +55,9 @@
             {
               "heading": "What it is",
               "paragraphs": [
-                "Most material for new product managers is a library: a pile of articles you are trusted to sequence yourself. That works if you already know what you are missing, which is precisely what a beginner does not.",
-                "PM Thinking Coach turns the map of the profession into a route. Two skill trees — product management and system design — hold 167 skills between them. Each is a card you can open and read. Each block of skills ends in a gate: a real situation with incomplete data where you decide and defend the decision in writing.",
-                "It runs on iOS in SwiftUI and in the browser, both on one FastAPI and Postgres backend, with the same account and the same corpus."
+                "Most learning resources for new product managers are libraries: piles of articles you’re expected to organize yourself. That works if you already know what you’re missing—which is exactly what beginners don’t.",
+                "PM Thinking Coach turns the map of the profession into a learning path. Two skill trees - Product Management and System Design cover 167 skills in total. Each skill is a focused card you can open, explore, and learn from. \n\nBut learning doesn’t stop at reading. Every skill block ends with a gate: a realistic business scenario with incomplete information. You make a decision, explain your reasoning, and defend it in writing - building the judgment and structured thinking that real product management requires.",
+                "PM Thinking Coach runs on iOS with SwiftUI and in the browser, powered by a shared FastAPI and PostgreSQL backend. One account, one skill map, one learning experience across platforms."
               ],
               "bullets": [],
               "image": "pmtc-learn.jpg",
@@ -67,13 +67,13 @@
             {
               "heading": "A gate, not a quiz",
               "paragraphs": [
-                "This is the decision the whole product rests on. A multiple-choice test measures whether you remember the right answer; the job measures whether you can defend a call with the evidence you actually have. So a gate hands you a company, a constraint and a deadline, lets you choose what evidence to look at, and then asks you to write down why.",
-                "Scoring enforces it rather than merely encouraging it. Rationale and communication carry 60 of 100 points against 25 for the decision itself, and the pass mark is 70 — so picking the option a grader would like, even with every piece of evidence reviewed, cannot pass on its own. A content validator rejects any scenario where a defensible alternative scores too low, which keeps a single-right-answer question out of the corpus by construction."
+                "This is the decision the entire product is built around. A multiple-choice test measures whether you remember the right answer. The job of a product manager is different: to make a defensible decision with incomplete information.\n\nThat’s why every gate gives you a company, a constraint, and a deadline. You decide what evidence to investigate, make the call, and then explain why you made it.",
+                "The scoring system reinforces this philosophy rather than simply encouraging it. The decision itself is worth 25 of 100 points, while rationale and communication account for 60. With a passing score of 70, choosing the “right” option isn’t enough—you have to demonstrate how you arrived at it. A content validator also rejects scenarios where a defensible alternative would score unfairly low, preventing single-answer questions from entering the corpus in the first place."
               ],
               "bullets": [
-                "Every gate has at least two scenarios, each with a different company, so a retake cannot be passed from memory",
-                "Failing costs nothing: no XP is taken, nothing locks, and the result points at the exact lessons that would have helped",
-                "The server owns score, XP and unlock status; the client renders them and never derives them, so a UI bug cannot open a gate early"
+                "Every gate has at least two scenarios, each featuring a different company, so you can’t pass a retake by memorizing the answer.",
+                "Failure has no penalty. You lose no XP, nothing gets locked, and your result points directly to the lessons that could help you improve.",
+                "The server owns progression. Score, XP, and unlock status are determined server-side; the client only renders them. A UI bug can never unlock a gate prematurely."
               ],
               "image": "pmtc-gate.jpg",
               "imageAlt": "A gate scenario: a shift-scheduling company whose month-two churn has risen from 9% to 16%",
@@ -82,9 +82,9 @@
             {
               "heading": "The lessons",
               "paragraphs": [
-                "A lesson is one idea, one model, and where that model stops working — three to five minutes on the product map, twelve to fifteen in system design. Every domain follows one fictional company through all of its blocks, so the examples accumulate instead of resetting.",
-                "Lessons can carry an audio overview: two hosts talking the lesson through, in the sense NotebookLM made familiar. It is deliberately not the lesson read aloud — prose read out loud always sounds like prose read out loud. The dialogue is written once at build time and stored as a content file, so it can be reviewed and edited like any other, and the runtime never calls a model.",
-                "The model that writes it is checked, not trusted: a draft is rejected if it uses a number or a term that does not appear in the lesson, if it collapses into a monologue, or if it quotes the lesson verbatim. Edit the lesson and its overview stops counting as current rather than quietly voicing last week's edition."
+                "A lesson is built around one idea, one practical model, and the point where that model stops working. Product management lessons take three to five minutes; system design lessons take twelve to fifteen. Within each domain, the same fictional company runs through every skill block, so examples build on each other instead of resetting with every lesson.",
+                "Lessons can also include an audio overview: a two-host conversation that explores the material in the style people have come to expect from tools like NotebookLM. It isn’t the lesson being read aloud - because written prose rarely makes good audio. The dialogue is generated once at build time and stored as a content file, where it can be reviewed, edited, and versioned like any other piece of content. The runtime never calls an AI model.",
+                "Generated content is validated rather than blindly trusted. An audio draft is rejected if it introduces a number or term that doesn’t appear in the lesson, turns into a one-person monologue, or simply quotes the source material verbatim. When a lesson changes, its audio overview is automatically marked as outdated rather than silently narrating an older version."
               ],
               "bullets": [],
               "image": "pmtc-lesson.jpg",
@@ -94,15 +94,14 @@
             {
               "heading": "What is in it",
               "paragraphs": [
-                "The corpus is authored, not generated — and it is finished. Both trees are fully published."
+                "The corpus is authored, not generated - and it’s complete. Both skill trees are fully published from day one."
               ],
               "bullets": [
-                "Two skill trees: product management (18 blocks, 71 skills) and system design (18 blocks, 96 skills), each open from day one",
-                "248 lessons, 36 gates and 87 gate scenarios, every one written and reviewed",
-                "96 exercises in system design that are formative on purpose: no XP, no effect on what opens next, and the reference reasoning comes back even on an empty submission",
-                "A 489-term glossary, and diagrams stored as structure rather than pictures, so a screen reader gets a description rather than an image",
-                "Eight competencies tracked per learner, one per domain of the map plus communication and system design",
-                "Bilingual: Russian is the authored source, English is an overlay merged over it. The rubric and option weights exist in one copy only, so the language someone reads in cannot change what they score — a property of the construction, not of discipline"
+                "Two complete skill trees: Product Management (18 blocks, 71 skills) and System Design (18 blocks, 96 skills), with the full map available from the start.",
+                "248 lessons, 36 gates, and 87 gate scenarios.",
+                "96 System Design exercises, intentionally formative: they award no XP, don’t affect progression, and show the reference reasoning even when submitted empty.",
+                "A 489-term glossary, with diagrams stored as structured data rather than images, allowing screen readers to access meaningful descriptions instead of inaccessible visuals.",
+                "Eight competencies tracked per learner, covering the core domains of the skill map plus communication and system design"
               ],
               "image": "pmtc-progress.jpg",
               "imageAlt": "The Progress screen: level, XP, blocks passed, lessons read, and the eight competencies",
@@ -111,7 +110,7 @@
             {
               "heading": "Where it stands",
               "paragraphs": [
-                "Both trees are complete and a full traversal has been verified end to end through the API. The evaluator currently runs a deterministic mock: it exercises the whole flow, but the coaching text reads as a stub and gate calibration against the QA fixtures is not meaningful until a real provider is wired up. That is the next decision, and it is deliberately the last one — nothing about the product depends on which model answers."
+                "Both skill trees are complete, and a full end-to-end traversal has been verified through the API.\n\nThe evaluator currently runs on a deterministic mock provider. It exercises the complete evaluation flow, but the coaching output is intentionally stubbed, and gate calibration against QA fixtures cannot be meaningfully validated until a real model provider is connected. That is the next, and deliberately final, implementation decision. Nothing else in the product is coupled to a specific model, so the provider can be swapped without changing the underlying product or assessment logic."
               ],
               "bullets": [
                 "Defined the beta success metrics before launch: activation, time to first value, D7 repeat practice, and whether the feedback was useful"
