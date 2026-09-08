@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Karla:ital,wght@0,300..600;1,300..500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=7">
+    <link rel="stylesheet" href="style.css?v=8">
 </head>
 <body>
 
@@ -27,18 +27,41 @@
 
     <header class="page-header">
         <h1>Skills</h1>
-        <p class="page-intro">The six directions below are the skill map of product management — the same map the PM Thinking Coach is built on, from Sergey Tikhomirov's Product Architecture Framework. Rather than list the tools I have touched, it lists the work the profession is actually made of, and where I stand on each part of it.</p>
         <p class="skill-scale">Self-assessed on a 0–100 scale, against my own experience rather than against the field: around 80 is work I have owned repeatedly and can point at an outcome for, around 60 is work I have done in fewer contexts, and below 50 is work I understand but have not owned.</p>
     </header>
 
     <div class="skills-page">
-        <section class="skill-group">
+        <nav class="skill-summary" aria-label="Ratings by direction">
+            <a class="summary-tile" href="#d-discovery">
+                <span class="summary-value">74</span>
+                <span class="summary-name">Discovery &amp; Research</span>
+            </a>
+            <a class="summary-tile" href="#d-value_design">
+                <span class="summary-value">72</span>
+                <span class="summary-name">Value &amp; Solution Design</span>
+            </a>
+            <a class="summary-tile" href="#d-delivery">
+                <span class="summary-value">71</span>
+                <span class="summary-name">Development &amp; Delivery</span>
+            </a>
+            <a class="summary-tile" href="#d-marketing">
+                <span class="summary-value">59</span>
+                <span class="summary-name">Product Marketing</span>
+            </a>
+            <a class="summary-tile" href="#d-growth">
+                <span class="summary-value">70</span>
+                <span class="summary-name">Growth &amp; Experiments</span>
+            </a>
+            <a class="summary-tile" href="#d-economics">
+                <span class="summary-value">66</span>
+                <span class="summary-name">Sales &amp; Economics</span>
+            </a>
+        </nav>
+
+        <section class="skill-group" id="d-discovery">
             <div class="skill-group-head">
                 <h2>Discovery &amp; Research</h2>
-                <span class="skill-meter skill-meter-lg" role="img" aria-label="Discovery &amp; Research average: 74 out of 100">
-                    <span class="skill-fill" style="width:74%"></span>
-                </span>
-                <span class="skill-value skill-value-lg">74</span>
+                <span class="skill-average" aria-label="Discovery &amp; Research average: 74 out of 100">74</span>
             </div>
             <ul class="skill-list">
                 <li class="skill-row">
@@ -114,13 +137,10 @@
             </ul>
         </section>
 
-        <section class="skill-group">
+        <section class="skill-group" id="d-value_design">
             <div class="skill-group-head">
                 <h2>Value &amp; Solution Design</h2>
-                <span class="skill-meter skill-meter-lg" role="img" aria-label="Value &amp; Solution Design average: 72 out of 100">
-                    <span class="skill-fill" style="width:72%"></span>
-                </span>
-                <span class="skill-value skill-value-lg">72</span>
+                <span class="skill-average" aria-label="Value &amp; Solution Design average: 72 out of 100">72</span>
             </div>
             <ul class="skill-list">
                 <li class="skill-row">
@@ -196,13 +216,10 @@
             </ul>
         </section>
 
-        <section class="skill-group">
+        <section class="skill-group" id="d-delivery">
             <div class="skill-group-head">
                 <h2>Development &amp; Delivery</h2>
-                <span class="skill-meter skill-meter-lg" role="img" aria-label="Development &amp; Delivery average: 71 out of 100">
-                    <span class="skill-fill" style="width:71%"></span>
-                </span>
-                <span class="skill-value skill-value-lg">71</span>
+                <span class="skill-average" aria-label="Development &amp; Delivery average: 71 out of 100">71</span>
             </div>
             <ul class="skill-list">
                 <li class="skill-row">
@@ -292,13 +309,10 @@
             </ul>
         </section>
 
-        <section class="skill-group">
+        <section class="skill-group" id="d-marketing">
             <div class="skill-group-head">
                 <h2>Product Marketing</h2>
-                <span class="skill-meter skill-meter-lg" role="img" aria-label="Product Marketing average: 59 out of 100">
-                    <span class="skill-fill" style="width:59%"></span>
-                </span>
-                <span class="skill-value skill-value-lg">59</span>
+                <span class="skill-average" aria-label="Product Marketing average: 59 out of 100">59</span>
             </div>
             <ul class="skill-list">
                 <li class="skill-row">
@@ -423,13 +437,10 @@
             </ul>
         </section>
 
-        <section class="skill-group">
+        <section class="skill-group" id="d-growth">
             <div class="skill-group-head">
                 <h2>Growth &amp; Experiments</h2>
-                <span class="skill-meter skill-meter-lg" role="img" aria-label="Growth &amp; Experiments average: 70 out of 100">
-                    <span class="skill-fill" style="width:70%"></span>
-                </span>
-                <span class="skill-value skill-value-lg">70</span>
+                <span class="skill-average" aria-label="Growth &amp; Experiments average: 70 out of 100">70</span>
             </div>
             <ul class="skill-list">
                 <li class="skill-row">
@@ -519,13 +530,10 @@
             </ul>
         </section>
 
-        <section class="skill-group">
+        <section class="skill-group" id="d-economics">
             <div class="skill-group-head">
                 <h2>Sales &amp; Economics</h2>
-                <span class="skill-meter skill-meter-lg" role="img" aria-label="Sales &amp; Economics average: 66 out of 100">
-                    <span class="skill-fill" style="width:66%"></span>
-                </span>
-                <span class="skill-value skill-value-lg">66</span>
+                <span class="skill-average" aria-label="Sales &amp; Economics average: 66 out of 100">66</span>
             </div>
             <ul class="skill-list">
                 <li class="skill-row">
@@ -601,7 +609,7 @@
             </ul>
         </section>
 
-        <section class="skill-group skill-group-plain">
+        <section class="skill-group skill-group-plain" id="d-tools-certifications">
             <div class="skill-group-head"><h2>Tools &amp; Certifications</h2></div>
             <ul class="skill-list">
                 <li class="skill-row skill-plain"><span class="skill-name">Jira</span></li>
@@ -612,7 +620,7 @@
             </ul>
         </section>
 
-        <section class="skill-group skill-group-plain">
+        <section class="skill-group skill-group-plain" id="d-data-ai">
             <div class="skill-group-head"><h2>Data &amp; AI</h2></div>
             <ul class="skill-list">
                 <li class="skill-row skill-plain"><span class="skill-name">SQL</span></li>
@@ -626,7 +634,7 @@
             </ul>
         </section>
 
-        <section class="skill-group skill-group-plain">
+        <section class="skill-group skill-group-plain" id="d-languages">
             <div class="skill-group-head"><h2>Languages</h2></div>
             <ul class="skill-list">
                 <li class="skill-row skill-plain"><span class="skill-name">English — fluent</span></li>
@@ -650,6 +658,6 @@
         <p class="copyright">© 2026 Erdan Kudaibergen. All rights reserved.</p>
     </footer>
 
-    <script src="transitions.js?v=7"></script>
+    <script src="transitions.js?v=8"></script>
 </body>
 </html>

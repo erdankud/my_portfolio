@@ -449,7 +449,7 @@
   "skillsPage": {
     "navLabel": "Skills",
     "heading": "Skills",
-    "intro": "The six directions below are the skill map of product management — the same map the PM Thinking Coach is built on, from Sergey Tikhomirov's Product Architecture Framework. Rather than list the tools I have touched, it lists the work the profession is actually made of, and where I stand on each part of it.",
+    "intro": "",
     "note": "Self-assessed on a 0–100 scale, against my own experience rather than against the field: around 80 is work I have owned repeatedly and can point at an outcome for, around 60 is work I have done in fewer contexts, and below 50 is work I understand but have not owned.",
     "categories": [
       {

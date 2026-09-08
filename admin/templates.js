@@ -11,7 +11,7 @@
 
 // Bump this whenever style.css changes, so browsers fetch the new file instead
 // of a cached copy. GitHub Pages serves the stylesheet with a long cache life.
-const CSS_VERSION = 7;
+const CSS_VERSION = 8;
 
 const FONTS =
   "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Karla:ital,wght@0,300..600;1,300..500&display=swap";
@@ -362,6 +362,11 @@ export function categoryAverage(cat) {
   return Math.round(levels.reduce((a, b) => a + b, 0) / levels.length);
 }
 
+/** Anchor for a category, so the summary at the top can jump to it. */
+function categoryAnchor(cat) {
+  return "d-" + (cat.id || slugify(cat.name || "group"));
+}
+
 function skillCategory(cat) {
   const skills = (cat.skills || []).filter((s) => String(s.name || "").trim());
   if (!skills.length) return "";
@@ -371,14 +376,11 @@ function skillCategory(cat) {
   const heading = rated
     ? `            <div class="skill-group-head">
                 <h2>${esc(cat.name)}</h2>
-                <span class="skill-meter skill-meter-lg" role="img" aria-label="${escAttr(cat.name)} average: ${average} out of 100">
-                    <span class="skill-fill" style="width:${average}%"></span>
-                </span>
-                <span class="skill-value skill-value-lg">${average}</span>
+                <span class="skill-average" aria-label="${escAttr(cat.name)} average: ${average} out of 100">${average}</span>
             </div>`
     : `            <div class="skill-group-head"><h2>${esc(cat.name)}</h2></div>`;
 
-  return `        <section class="skill-group${rated ? "" : " skill-group-plain"}">
+  return `        <section class="skill-group${rated ? "" : " skill-group-plain"}" id="${escAttr(categoryAnchor(cat))}">
 ${heading}
 ${String(cat.note || "").trim() ? `            <p class="skill-note">${esc(cat.note)}</p>\n` : ""}            <ul class="skill-list">
 ${skills.map(skillRow).join("\n")}
@@ -386,10 +388,35 @@ ${skills.map(skillRow).join("\n")}
         </section>`;
 }
 
+/**
+ * The ratings at a glance, above the detail. It doubles as navigation: on a
+ * page this long, the summary is also how you reach a direction.
+ */
+function skillSummary(page) {
+  const rated = (page.categories || [])
+    .map((cat) => ({ cat, average: categoryAverage(cat) }))
+    .filter((x) => x.average !== null);
+  if (!rated.length) return "";
+
+  const tiles = rated
+    .map(
+      ({ cat, average }) => `            <a class="summary-tile" href="#${escAttr(categoryAnchor(cat))}">
+                <span class="summary-value">${average}</span>
+                <span class="summary-name">${esc(cat.name)}</span>
+            </a>`
+    )
+    .join("\n");
+
+  return `        <nav class="skill-summary" aria-label="Ratings by direction">
+${tiles}
+        </nav>`;
+}
+
 export function buildSkills(c) {
   const { site } = c;
   const page = c.skillsPage || { heading: "Skills", categories: [] };
   const groups = (page.categories || []).map(skillCategory).filter(Boolean).join("\n\n");
+  const summary = skillSummary(page);
 
   const body = `
     <header class="page-header">
@@ -397,7 +424,7 @@ export function buildSkills(c) {
 ${String(page.intro || "").trim() ? `        <p class="page-intro">${esc(page.intro)}</p>\n` : ""}${String(page.note || "").trim() ? `        <p class="skill-scale">${esc(page.note)}</p>\n` : ""}    </header>
 
     <div class="skills-page">
-${groups}
+${summary ? summary + "\n\n" : ""}${groups}
     </div>
 `;
 

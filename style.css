@@ -379,16 +379,61 @@ a { color: var(--accent); }
     padding-top: 44px;
     margin-top: 44px;
     border-top: 1px solid var(--line);
+    /* The nav is sticky, so an anchored jump would land underneath it. */
+    scroll-margin-top: 90px;
 }
 
-.skill-group:first-child { border-top: none; margin-top: 24px; padding-top: 0; }
+/* The summary already ends in a rule, so the first group must not draw its own.
+   :first-of-type rather than :first-child, because the summary now precedes it. */
+.skill-group:first-of-type { border-top: none; margin-top: 24px; padding-top: 0; }
 
-/* The heading shares the skill row's grid, so the category's own bar sits
-   directly above the bars it averages. */
-.skill-group-head {
+/* The ratings at a glance, before any of the detail.
+   Hairlines rather than a filled block: the earlier version let a grey ground
+   show through 1px gaps, which breaks the moment two tiles differ in height. */
+.skill-summary {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 200px 2.5ch;
-    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 32px;
+    row-gap: 28px;
+    padding: 30px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    margin: 28px 0 8px;
+}
+
+.summary-tile {
+    display: block;
+    text-decoration: none;
+    transition: opacity 0.25s;
+}
+
+.summary-tile:hover { opacity: 0.6; }
+
+.summary-value {
+    display: block;
+    font-family: var(--serif);
+    font-size: 2.75rem;
+    line-height: 1;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    margin-bottom: 6px;
+}
+
+.summary-name {
+    display: block;
+    font-size: 0.78rem;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--muted);
+    line-height: 1.4;
+}
+
+/* The heading carries the rating as a number: at this size a bar adds nothing
+   the digits do not already say. */
+.skill-group-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
     gap: 20px;
     margin-bottom: 18px;
 }
@@ -398,12 +443,13 @@ a { color: var(--accent); }
     margin: 0;
 }
 
-.skill-meter-lg { height: 8px; background: #e2e2e6; }
-
-.skill-value-lg {
-    font-size: 1rem;
+.skill-average {
+    font-family: var(--serif);
+    font-size: 2.25rem;
+    line-height: 1;
     color: var(--ink);
-    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
 }
 
 .skill-note {
@@ -470,11 +516,14 @@ a { color: var(--accent); }
 .skill-group-plain .skill-name { font-size: 0.88rem; }
 
 @media (max-width: 700px) {
-    .skill-group-head {
-        grid-template-columns: minmax(0, 1fr) 2.5ch;
-        gap: 8px 14px;
+    .skill-summary {
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+        row-gap: 22px;
+        padding: 24px 0;
     }
-    .skill-meter-lg { grid-column: 1 / -1; }
+    .summary-value { font-size: 2.1rem; }
+    .skill-average { font-size: 1.9rem; }
 
     /* The bar drops under the name rather than squeezing both. */
     .skill-row {
