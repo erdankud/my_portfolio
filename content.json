@@ -444,62 +444,421 @@
           "caption": ""
         }
       ]
-    },
-    "skills": {
-      "navLabel": "Skills",
-      "heading": "Skills",
-      "intro": "",
-      "groups": [],
-      "items": [
-        {
-          "slug": "product",
-          "group": "",
-          "title": "Product",
-          "meta": "Discovery, definition and delivery",
-          "summary": "Discovery & customer interviews, PRDs, roadmapping, RICE prioritization, A/B testing & experiment design, competitive analysis, leading cross-functional teams.",
-          "image": "skill-product.svg",
-          "imageAlt": "A route of connected points rising from left to right, the last one marked",
-          "tagline": "",
-          "sections": [],
-          "caption": ""
-        },
-        {
-          "slug": "data-and-ai",
-          "group": "",
-          "title": "Data & AI",
-          "meta": "Analysis and applied AI",
-          "summary": "SQL, Python (pandas), Tableau, Excel, Amplitude; RAG architecture, LLM evaluation & prompt design, Claude Code, model tradeoffs (latency/cost/quality).",
-          "image": "skill-data-ai.svg",
-          "imageAlt": "A network of nodes in three layers, with one path through it highlighted",
-          "tagline": "",
-          "sections": [],
-          "caption": ""
-        },
-        {
-          "slug": "tools",
-          "group": "",
-          "title": "Tools & Certifications",
-          "meta": "Day-to-day toolkit",
-          "summary": "Jira, Confluence, Figma, Linear; Professional Scrum Master I (PSM I).",
-          "image": "skill-tools.svg",
-          "imageAlt": "A grid of modular tiles, one marked with a check and one still empty",
-          "tagline": "",
-          "sections": [],
-          "caption": ""
-        },
-        {
-          "slug": "languages",
-          "group": "",
-          "title": "Languages",
-          "meta": "",
-          "summary": "English (Fluent), Russian (Native).",
-          "image": "skill-languages.svg",
-          "imageAlt": "Two overlapping speech bubbles, each holding lines of text",
-          "tagline": "",
-          "sections": [],
-          "caption": ""
-        }
-      ]
     }
+  },
+  "skillsPage": {
+    "navLabel": "Skills",
+    "heading": "Skills",
+    "intro": "The six directions below are the skill map of product management — the same map the PM Thinking Coach is built on, from Sergey Tikhomirov's Product Architecture Framework. Rather than list the tools I have touched, it lists the work the profession is actually made of, and where I stand on each part of it.",
+    "note": "Levels are self-assessed on a 0–100 scale.",
+    "categories": [
+      {
+        "id": "discovery",
+        "name": "Discovery & Research",
+        "skills": [
+          {
+            "name": "Feedback collection and processing",
+            "level": 50
+          },
+          {
+            "name": "Conducting interviews",
+            "level": 50
+          },
+          {
+            "name": "Drafting interview scripts",
+            "level": 50
+          },
+          {
+            "name": "Monitoring product metrics",
+            "level": 50
+          },
+          {
+            "name": "Building the customer context",
+            "level": 50
+          },
+          {
+            "name": "Qualitative customer behavior analysis",
+            "level": 50
+          },
+          {
+            "name": "Analyzing root causes of metric changes",
+            "level": 50
+          },
+          {
+            "name": "Modeling changes",
+            "level": 50
+          },
+          {
+            "name": "Defining research goals",
+            "level": 50
+          },
+          {
+            "name": "Building a metric system",
+            "level": 50
+          }
+        ],
+        "note": ""
+      },
+      {
+        "id": "value_design",
+        "name": "Value & Solution Design",
+        "skills": [
+          {
+            "name": "Identifying needs",
+            "level": 50
+          },
+          {
+            "name": "Analyzing alternative solutions",
+            "level": 50
+          },
+          {
+            "name": "Formalizing use cases",
+            "level": 50
+          },
+          {
+            "name": "Formalizing requirements",
+            "level": 50
+          },
+          {
+            "name": "Defining the solution and value propositions",
+            "level": 50
+          },
+          {
+            "name": "Defining business logic",
+            "level": 50
+          },
+          {
+            "name": "Designing the interface",
+            "level": 50
+          },
+          {
+            "name": "Building the design system and metaphors",
+            "level": 50
+          },
+          {
+            "name": "Defining the product concept",
+            "level": 50
+          },
+          {
+            "name": "Analyzing technologies and trends",
+            "level": 50
+          }
+        ],
+        "note": ""
+      },
+      {
+        "id": "delivery",
+        "name": "Development & Delivery",
+        "skills": [
+          {
+            "name": "Building the backlog",
+            "level": 50
+          },
+          {
+            "name": "Supporting the development process",
+            "level": 50
+          },
+          {
+            "name": "Acceptance testing of changes",
+            "level": 50
+          },
+          {
+            "name": "Creating user guides",
+            "level": 50
+          },
+          {
+            "name": "Collecting and analyzing change impact",
+            "level": 50
+          },
+          {
+            "name": "Backlog prioritization",
+            "level": 50
+          },
+          {
+            "name": "Release planning",
+            "level": 50
+          },
+          {
+            "name": "Setting up development projects",
+            "level": 50
+          },
+          {
+            "name": "Managing integrations",
+            "level": 50
+          },
+          {
+            "name": "Preparing migrations",
+            "level": 50
+          },
+          {
+            "name": "Training users on product usage",
+            "level": 50
+          },
+          {
+            "name": "Optimizing go-to-market delivery processes",
+            "level": 50
+          }
+        ],
+        "note": ""
+      },
+      {
+        "id": "marketing",
+        "name": "Product Marketing",
+        "skills": [
+          {
+            "name": "Monitoring sales funnel metrics",
+            "level": 50
+          },
+          {
+            "name": "Defining product value and features",
+            "level": 50
+          },
+          {
+            "name": "Monitoring media and influencers",
+            "level": 50
+          },
+          {
+            "name": "Tracking industry events",
+            "level": 50
+          },
+          {
+            "name": "Drafting Release Notes",
+            "level": 50
+          },
+          {
+            "name": "Writing Case Studies",
+            "level": 50
+          },
+          {
+            "name": "Defining acquisition channels and offers",
+            "level": 50
+          },
+          {
+            "name": "Finding and acquiring customers",
+            "level": 50
+          },
+          {
+            "name": "Sales funnel optimization",
+            "level": 50
+          },
+          {
+            "name": "In-product activation and onboarding",
+            "level": 50
+          },
+          {
+            "name": "Defining retention mechanics",
+            "level": 50
+          },
+          {
+            "name": "Defining positioning and competitive strategy",
+            "level": 50
+          },
+          {
+            "name": "Customer acquisition strategy",
+            "level": 50
+          },
+          {
+            "name": "Customer retention strategy",
+            "level": 50
+          },
+          {
+            "name": "Go-to-market strategy",
+            "level": 50
+          },
+          {
+            "name": "Product sunset strategy",
+            "level": 50
+          },
+          {
+            "name": "Product PR strategy",
+            "level": 50
+          }
+        ],
+        "note": ""
+      },
+      {
+        "id": "growth",
+        "name": "Growth & Experiments",
+        "skills": [
+          {
+            "name": "Idea generation and management",
+            "level": 50
+          },
+          {
+            "name": "Formulating hypotheses",
+            "level": 50
+          },
+          {
+            "name": "Evaluating and comparing ideas",
+            "level": 50
+          },
+          {
+            "name": "Running experiments",
+            "level": 50
+          },
+          {
+            "name": "Experiment prioritization",
+            "level": 50
+          },
+          {
+            "name": "Setting up the experimentation process",
+            "level": 50
+          },
+          {
+            "name": "Knowledge management",
+            "level": 50
+          },
+          {
+            "name": "Product development prioritization",
+            "level": 50
+          },
+          {
+            "name": "Setting product growth goals",
+            "level": 50
+          },
+          {
+            "name": "Building the product strategy",
+            "level": 50
+          },
+          {
+            "name": "Product portfolio strategy",
+            "level": 50
+          },
+          {
+            "name": "Creating the vision",
+            "level": 50
+          }
+        ],
+        "note": ""
+      },
+      {
+        "id": "economics",
+        "name": "Sales & Economics",
+        "skills": [
+          {
+            "name": "Preparing sales scripts and handling objections",
+            "level": 50
+          },
+          {
+            "name": "Product presales",
+            "level": 50
+          },
+          {
+            "name": "Market sizing",
+            "level": 50
+          },
+          {
+            "name": "Macro-environment analysis",
+            "level": 50
+          },
+          {
+            "name": "Internal company analysis",
+            "level": 50
+          },
+          {
+            "name": "Competitor analysis",
+            "level": 50
+          },
+          {
+            "name": "Defining customer segments for the sales strategy",
+            "level": 50
+          },
+          {
+            "name": "Optimizing the monetization model",
+            "level": 50
+          },
+          {
+            "name": "Defining the business model and monetization plan",
+            "level": 50
+          },
+          {
+            "name": "Financial planning and P&L management",
+            "level": 50
+          }
+        ],
+        "note": ""
+      },
+      {
+        "id": "tools-certifications",
+        "name": "Tools & Certifications",
+        "note": "",
+        "skills": [
+          {
+            "name": "Jira",
+            "level": null
+          },
+          {
+            "name": "Confluence",
+            "level": null
+          },
+          {
+            "name": "Figma",
+            "level": null
+          },
+          {
+            "name": "Linear",
+            "level": null
+          },
+          {
+            "name": "Professional Scrum Master I (PSM I)",
+            "level": null
+          }
+        ]
+      },
+      {
+        "id": "data-ai",
+        "name": "Data & AI",
+        "note": "",
+        "skills": [
+          {
+            "name": "SQL",
+            "level": null
+          },
+          {
+            "name": "Python (pandas)",
+            "level": null
+          },
+          {
+            "name": "Tableau",
+            "level": null
+          },
+          {
+            "name": "Excel",
+            "level": null
+          },
+          {
+            "name": "Amplitude",
+            "level": null
+          },
+          {
+            "name": "RAG architecture",
+            "level": null
+          },
+          {
+            "name": "LLM evaluation & prompt design",
+            "level": null
+          },
+          {
+            "name": "Claude Code",
+            "level": null
+          }
+        ]
+      },
+      {
+        "id": "languages",
+        "name": "Languages",
+        "note": "",
+        "skills": [
+          {
+            "name": "English — fluent",
+            "level": null
+          },
+          {
+            "name": "Russian — native",
+            "level": null
+          }
+        ]
+      }
+    ]
   }
 }

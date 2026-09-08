@@ -337,3 +337,39 @@ button.add.small { padding: 7px; font-size: 12px; }
     }
     .actions-inner { position: static; }
 }
+
+/* ------------------------------------------------------- skills editor */
+
+.skill-edit-list { display: flex; flex-direction: column; gap: 4px; }
+
+/* Name, slider, number, tools — one grid so the sliders line up down the
+   category however long the skill names are. */
+.skill-edit-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 150px 68px auto;
+    align-items: center;
+    gap: 10px;
+}
+
+.skill-edit-row input[type="range"] {
+    width: 100%;
+    accent-color: var(--ink);
+    cursor: pointer;
+}
+
+.skill-edit-row input[type="range"]:disabled { opacity: 0.35; cursor: default; }
+
+input.skill-num {
+    width: 100%;
+    text-align: center;
+    font-variant-numeric: tabular-nums;
+    padding: 7px 6px;
+}
+
+@media (max-width: 760px) {
+    .skill-edit-row {
+        grid-template-columns: minmax(0, 1fr) 68px auto;
+        gap: 8px;
+    }
+    .skill-edit-row input[type="range"] { grid-column: 1 / -1; }
+}

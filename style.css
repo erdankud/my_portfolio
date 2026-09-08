@@ -365,6 +365,103 @@ a { color: var(--accent); }
 .detail-footer { padding: 20px 0 90px; }
 .detail-footer .btn { margin-top: 0; }
 
+/* ------------------------------------------------------------ skills page */
+
+.skills-page { padding-bottom: 90px; }
+
+.skill-scale {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 10px;
+}
+
+.skill-group {
+    padding-top: 44px;
+    margin-top: 44px;
+    border-top: 1px solid var(--line);
+}
+
+.skill-group:first-child { border-top: none; margin-top: 24px; padding-top: 0; }
+
+.skill-group h2 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+}
+
+.skill-note {
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-top: -8px;
+    margin-bottom: 18px;
+}
+
+.skill-list { list-style: none; padding: 0; margin: 0; }
+
+/* Name, bar, number — one grid so every bar starts and ends on the same line
+   down the whole page, whatever the name's length. */
+.skill-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 200px 2.5ch;
+    align-items: center;
+    gap: 20px;
+    padding: 9px 0;
+    border-bottom: 1px solid #f0f0f2;
+}
+
+.skill-row:last-child { border-bottom: none; }
+
+.skill-name { font-size: 0.95rem; color: var(--ink); }
+
+.skill-meter {
+    display: block;
+    height: 5px;
+    background: #ebebee;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.skill-fill {
+    display: block;
+    height: 100%;
+    background: var(--ink);
+    border-radius: 3px;
+}
+
+.skill-value {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+/* A category with no levels is a list of names, so it reads as tags. */
+.skill-group-plain .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-group-plain .skill-row {
+    display: inline-flex;
+    padding: 7px 15px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fafafb;
+}
+
+.skill-group-plain .skill-name { font-size: 0.88rem; }
+
+@media (max-width: 700px) {
+    /* The bar drops under the name rather than squeezing both. */
+    .skill-row {
+        grid-template-columns: minmax(0, 1fr) 2.5ch;
+        gap: 6px 14px;
+        padding: 12px 0;
+    }
+    .skill-meter { grid-column: 1 / -1; }
+    .skill-group-plain .skill-row { grid-template-columns: none; }
+}
+
 /* ---------------------------------------------------------------- footer */
 
 footer {

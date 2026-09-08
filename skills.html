@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Karla:ital,wght@0,300..600;1,300..500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -27,49 +27,577 @@
 
     <header class="page-header">
         <h1>Skills</h1>
+        <p class="page-intro">The six directions below are the skill map of product management — the same map the PM Thinking Coach is built on, from Sergey Tikhomirov's Product Architecture Framework. Rather than list the tools I have touched, it lists the work the profession is actually made of, and where I stand on each part of it.</p>
+        <p class="skill-scale">Levels are self-assessed on a 0–100 scale.</p>
     </header>
 
-    <section class="cards">
-            <article class="card">
-                <div class="card-media">
-                    <img src="skill-product.svg" alt="A route of connected points rising from left to right, the last one marked" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3>Product</h3>
-                    <p class="card-meta">Discovery, definition and delivery</p>
-                    <p class="card-summary">Discovery &amp; customer interviews, PRDs, roadmapping, RICE prioritization, A/B testing &amp; experiment design, competitive analysis, leading cross-functional teams.</p>
-                </div>
-            </article>
-            <article class="card">
-                <div class="card-media">
-                    <img src="skill-data-ai.svg" alt="A network of nodes in three layers, with one path through it highlighted" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3>Data &amp; AI</h3>
-                    <p class="card-meta">Analysis and applied AI</p>
-                    <p class="card-summary">SQL, Python (pandas), Tableau, Excel, Amplitude; RAG architecture, LLM evaluation &amp; prompt design, Claude Code, model tradeoffs (latency/cost/quality).</p>
-                </div>
-            </article>
-            <article class="card">
-                <div class="card-media">
-                    <img src="skill-tools.svg" alt="A grid of modular tiles, one marked with a check and one still empty" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3>Tools &amp; Certifications</h3>
-                    <p class="card-meta">Day-to-day toolkit</p>
-                    <p class="card-summary">Jira, Confluence, Figma, Linear; Professional Scrum Master I (PSM I).</p>
-                </div>
-            </article>
-            <article class="card">
-                <div class="card-media">
-                    <img src="skill-languages.svg" alt="Two overlapping speech bubbles, each holding lines of text" loading="lazy">
-                </div>
-                <div class="card-body">
-                    <h3>Languages</h3>
-                    <p class="card-summary">English (Fluent), Russian (Native).</p>
-                </div>
-            </article>
-    </section>
+    <div class="skills-page">
+        <section class="skill-group">
+            <h2>Discovery &amp; Research</h2>
+            <ul class="skill-list">
+                <li class="skill-row">
+                    <span class="skill-name">Feedback collection and processing</span>
+                    <span class="skill-meter" role="img" aria-label="Feedback collection and processing: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Conducting interviews</span>
+                    <span class="skill-meter" role="img" aria-label="Conducting interviews: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Drafting interview scripts</span>
+                    <span class="skill-meter" role="img" aria-label="Drafting interview scripts: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Monitoring product metrics</span>
+                    <span class="skill-meter" role="img" aria-label="Monitoring product metrics: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Building the customer context</span>
+                    <span class="skill-meter" role="img" aria-label="Building the customer context: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Qualitative customer behavior analysis</span>
+                    <span class="skill-meter" role="img" aria-label="Qualitative customer behavior analysis: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Analyzing root causes of metric changes</span>
+                    <span class="skill-meter" role="img" aria-label="Analyzing root causes of metric changes: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Modeling changes</span>
+                    <span class="skill-meter" role="img" aria-label="Modeling changes: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Defining research goals</span>
+                    <span class="skill-meter" role="img" aria-label="Defining research goals: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Building a metric system</span>
+                    <span class="skill-meter" role="img" aria-label="Building a metric system: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="skill-group">
+            <h2>Value &amp; Solution Design</h2>
+            <ul class="skill-list">
+                <li class="skill-row">
+                    <span class="skill-name">Identifying needs</span>
+                    <span class="skill-meter" role="img" aria-label="Identifying needs: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Analyzing alternative solutions</span>
+                    <span class="skill-meter" role="img" aria-label="Analyzing alternative solutions: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Formalizing use cases</span>
+                    <span class="skill-meter" role="img" aria-label="Formalizing use cases: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Formalizing requirements</span>
+                    <span class="skill-meter" role="img" aria-label="Formalizing requirements: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Defining the solution and value propositions</span>
+                    <span class="skill-meter" role="img" aria-label="Defining the solution and value propositions: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Defining business logic</span>
+                    <span class="skill-meter" role="img" aria-label="Defining business logic: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Designing the interface</span>
+                    <span class="skill-meter" role="img" aria-label="Designing the interface: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Building the design system and metaphors</span>
+                    <span class="skill-meter" role="img" aria-label="Building the design system and metaphors: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Defining the product concept</span>
+                    <span class="skill-meter" role="img" aria-label="Defining the product concept: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Analyzing technologies and trends</span>
+                    <span class="skill-meter" role="img" aria-label="Analyzing technologies and trends: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="skill-group">
+            <h2>Development &amp; Delivery</h2>
+            <ul class="skill-list">
+                <li class="skill-row">
+                    <span class="skill-name">Building the backlog</span>
+                    <span class="skill-meter" role="img" aria-label="Building the backlog: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Supporting the development process</span>
+                    <span class="skill-meter" role="img" aria-label="Supporting the development process: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Acceptance testing of changes</span>
+                    <span class="skill-meter" role="img" aria-label="Acceptance testing of changes: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Creating user guides</span>
+                    <span class="skill-meter" role="img" aria-label="Creating user guides: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Collecting and analyzing change impact</span>
+                    <span class="skill-meter" role="img" aria-label="Collecting and analyzing change impact: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Backlog prioritization</span>
+                    <span class="skill-meter" role="img" aria-label="Backlog prioritization: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Release planning</span>
+                    <span class="skill-meter" role="img" aria-label="Release planning: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Setting up development projects</span>
+                    <span class="skill-meter" role="img" aria-label="Setting up development projects: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Managing integrations</span>
+                    <span class="skill-meter" role="img" aria-label="Managing integrations: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Preparing migrations</span>
+                    <span class="skill-meter" role="img" aria-label="Preparing migrations: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Training users on product usage</span>
+                    <span class="skill-meter" role="img" aria-label="Training users on product usage: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Optimizing go-to-market delivery processes</span>
+                    <span class="skill-meter" role="img" aria-label="Optimizing go-to-market delivery processes: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="skill-group">
+            <h2>Product Marketing</h2>
+            <ul class="skill-list">
+                <li class="skill-row">
+                    <span class="skill-name">Monitoring sales funnel metrics</span>
+                    <span class="skill-meter" role="img" aria-label="Monitoring sales funnel metrics: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Defining product value and features</span>
+                    <span class="skill-meter" role="img" aria-label="Defining product value and features: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Monitoring media and influencers</span>
+                    <span class="skill-meter" role="img" aria-label="Monitoring media and influencers: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Tracking industry events</span>
+                    <span class="skill-meter" role="img" aria-label="Tracking industry events: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Drafting Release Notes</span>
+                    <span class="skill-meter" role="img" aria-label="Drafting Release Notes: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Writing Case Studies</span>
+                    <span class="skill-meter" role="img" aria-label="Writing Case Studies: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Defining acquisition channels and offers</span>
+                    <span class="skill-meter" role="img" aria-label="Defining acquisition channels and offers: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Finding and acquiring customers</span>
+                    <span class="skill-meter" role="img" aria-label="Finding and acquiring customers: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Sales funnel optimization</span>
+                    <span class="skill-meter" role="img" aria-label="Sales funnel optimization: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">In-product activation and onboarding</span>
+                    <span class="skill-meter" role="img" aria-label="In-product activation and onboarding: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Defining retention mechanics</span>
+                    <span class="skill-meter" role="img" aria-label="Defining retention mechanics: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Defining positioning and competitive strategy</span>
+                    <span class="skill-meter" role="img" aria-label="Defining positioning and competitive strategy: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Customer acquisition strategy</span>
+                    <span class="skill-meter" role="img" aria-label="Customer acquisition strategy: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Customer retention strategy</span>
+                    <span class="skill-meter" role="img" aria-label="Customer retention strategy: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Go-to-market strategy</span>
+                    <span class="skill-meter" role="img" aria-label="Go-to-market strategy: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Product sunset strategy</span>
+                    <span class="skill-meter" role="img" aria-label="Product sunset strategy: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Product PR strategy</span>
+                    <span class="skill-meter" role="img" aria-label="Product PR strategy: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="skill-group">
+            <h2>Growth &amp; Experiments</h2>
+            <ul class="skill-list">
+                <li class="skill-row">
+                    <span class="skill-name">Idea generation and management</span>
+                    <span class="skill-meter" role="img" aria-label="Idea generation and management: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Formulating hypotheses</span>
+                    <span class="skill-meter" role="img" aria-label="Formulating hypotheses: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Evaluating and comparing ideas</span>
+                    <span class="skill-meter" role="img" aria-label="Evaluating and comparing ideas: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Running experiments</span>
+                    <span class="skill-meter" role="img" aria-label="Running experiments: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Experiment prioritization</span>
+                    <span class="skill-meter" role="img" aria-label="Experiment prioritization: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Setting up the experimentation process</span>
+                    <span class="skill-meter" role="img" aria-label="Setting up the experimentation process: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Knowledge management</span>
+                    <span class="skill-meter" role="img" aria-label="Knowledge management: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Product development prioritization</span>
+                    <span class="skill-meter" role="img" aria-label="Product development prioritization: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Setting product growth goals</span>
+                    <span class="skill-meter" role="img" aria-label="Setting product growth goals: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Building the product strategy</span>
+                    <span class="skill-meter" role="img" aria-label="Building the product strategy: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Product portfolio strategy</span>
+                    <span class="skill-meter" role="img" aria-label="Product portfolio strategy: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Creating the vision</span>
+                    <span class="skill-meter" role="img" aria-label="Creating the vision: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="skill-group">
+            <h2>Sales &amp; Economics</h2>
+            <ul class="skill-list">
+                <li class="skill-row">
+                    <span class="skill-name">Preparing sales scripts and handling objections</span>
+                    <span class="skill-meter" role="img" aria-label="Preparing sales scripts and handling objections: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Product presales</span>
+                    <span class="skill-meter" role="img" aria-label="Product presales: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Market sizing</span>
+                    <span class="skill-meter" role="img" aria-label="Market sizing: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Macro-environment analysis</span>
+                    <span class="skill-meter" role="img" aria-label="Macro-environment analysis: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Internal company analysis</span>
+                    <span class="skill-meter" role="img" aria-label="Internal company analysis: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Competitor analysis</span>
+                    <span class="skill-meter" role="img" aria-label="Competitor analysis: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Defining customer segments for the sales strategy</span>
+                    <span class="skill-meter" role="img" aria-label="Defining customer segments for the sales strategy: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Optimizing the monetization model</span>
+                    <span class="skill-meter" role="img" aria-label="Optimizing the monetization model: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Defining the business model and monetization plan</span>
+                    <span class="skill-meter" role="img" aria-label="Defining the business model and monetization plan: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+                <li class="skill-row">
+                    <span class="skill-name">Financial planning and P&amp;L management</span>
+                    <span class="skill-meter" role="img" aria-label="Financial planning and P&amp;L management: 50 out of 100">
+                        <span class="skill-fill" style="width:50%"></span>
+                    </span>
+                    <span class="skill-value">50</span>
+                </li>
+            </ul>
+        </section>
+
+        <section class="skill-group skill-group-plain">
+            <h2>Tools &amp; Certifications</h2>
+            <ul class="skill-list">
+                <li class="skill-row skill-plain"><span class="skill-name">Jira</span></li>
+                <li class="skill-row skill-plain"><span class="skill-name">Confluence</span></li>
+                <li class="skill-row skill-plain"><span class="skill-name">Figma</span></li>
+                <li class="skill-row skill-plain"><span class="skill-name">Linear</span></li>
+                <li class="skill-row skill-plain"><span class="skill-name">Professional Scrum Master I (PSM I)</span></li>
+            </ul>
+        </section>
+
+        <section class="skill-group skill-group-plain">
+            <h2>Data &amp; AI</h2>
+            <ul class="skill-list">
+                <li class="skill-row skill-plain"><span class="skill-name">SQL</span></li>
+                <li class="skill-row skill-plain"><span class="skill-name">Python (pandas)</span></li>
+                <li class="skill-row skill-plain"><span class="skill-name">Tableau</span></li>
+                <li class="skill-row skill-plain"><span class="skill-name">Excel</span></li>
+                <li class="skill-row skill-plain"><span class="skill-name">Amplitude</span></li>
+                <li class="skill-row skill-plain"><span class="skill-name">RAG architecture</span></li>
+                <li class="skill-row skill-plain"><span class="skill-name">LLM evaluation &amp; prompt design</span></li>
+                <li class="skill-row skill-plain"><span class="skill-name">Claude Code</span></li>
+            </ul>
+        </section>
+
+        <section class="skill-group skill-group-plain">
+            <h2>Languages</h2>
+            <ul class="skill-list">
+                <li class="skill-row skill-plain"><span class="skill-name">English — fluent</span></li>
+                <li class="skill-row skill-plain"><span class="skill-name">Russian — native</span></li>
+            </ul>
+        </section>
+    </div>
     </div>
 
     <footer>
@@ -86,6 +614,6 @@
         <p class="copyright">© 2026 Erdan Kudaibergen. All rights reserved.</p>
     </footer>
 
-    <script src="transitions.js?v=5"></script>
+    <script src="transitions.js?v=6"></script>
 </body>
 </html>

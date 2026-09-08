@@ -11,7 +11,7 @@
 
 // Bump this whenever style.css changes, so browsers fetch the new file instead
 // of a cached copy. GitHub Pages serves the stylesheet with a long cache life.
-const CSS_VERSION = 5;
+const CSS_VERSION = 6;
 
 const FONTS =
   "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Karla:ital,wght@0,300..600;1,300..500&display=swap";
@@ -24,7 +24,11 @@ const ICON = {
   download: '<path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>',
 };
 
-const COLLECTIONS = ["work", "education", "skills"];
+// Collections render as an index of cards plus a detail page per entry.
+const COLLECTIONS = ["work", "education"];
+
+// Skills is its own page: a rated list, not cards. It still sits in the nav.
+const NAV_PAGES = [...COLLECTIONS, "skills"];
 
 /** Escape text for use in HTML body content. */
 export function esc(value) {
@@ -69,11 +73,15 @@ function svg(name, size) {
   return `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="currentColor">${ICON[name]}</svg>`;
 }
 
+function navLabel(c, id) {
+  if (id === "skills") return c.skillsPage?.navLabel || "Skills";
+  return c.collections[id]?.navLabel || id;
+}
+
 function head(title, c) {
-  const links = COLLECTIONS.map((id) => {
-    const col = c.collections[id];
-    return `            <a href="${id}.html">${esc(col.navLabel)}</a>`;
-  }).join("\n");
+  const links = NAV_PAGES.map(
+    (id) => `            <a href="${id}.html">${esc(navLabel(c, id))}</a>`
+  ).join("\n");
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -312,6 +320,60 @@ ${(item.sections || []).map(section).join("\n\n")}
   return head(`${item.title} — ${site.name}`, c) + body + foot(site);
 }
 
+/* --------------------------------------------------------------- skills */
+
+/**
+ * One skill row. A level renders as a bar; without one the skill is a plain
+ * name, because a 0–100 bar against "Jira" would be measuring nothing.
+ */
+function skillRow(skill) {
+  const level = Number.isFinite(Number(skill.level)) && skill.level !== null && skill.level !== ""
+    ? Math.max(0, Math.min(100, Math.round(Number(skill.level))))
+    : null;
+
+  if (level === null) {
+    return `                <li class="skill-row skill-plain"><span class="skill-name">${esc(skill.name)}</span></li>`;
+  }
+  return `                <li class="skill-row">
+                    <span class="skill-name">${esc(skill.name)}</span>
+                    <span class="skill-meter" role="img" aria-label="${escAttr(skill.name)}: ${level} out of 100">
+                        <span class="skill-fill" style="width:${level}%"></span>
+                    </span>
+                    <span class="skill-value">${level}</span>
+                </li>`;
+}
+
+function skillCategory(cat) {
+  const skills = (cat.skills || []).filter((s) => String(s.name || "").trim());
+  if (!skills.length) return "";
+  const rated = skills.some((s) => s.level !== null && s.level !== "" && Number.isFinite(Number(s.level)));
+
+  return `        <section class="skill-group${rated ? "" : " skill-group-plain"}">
+            <h2>${esc(cat.name)}</h2>
+${String(cat.note || "").trim() ? `            <p class="skill-note">${esc(cat.note)}</p>\n` : ""}            <ul class="skill-list">
+${skills.map(skillRow).join("\n")}
+            </ul>
+        </section>`;
+}
+
+export function buildSkills(c) {
+  const { site } = c;
+  const page = c.skillsPage || { heading: "Skills", categories: [] };
+  const groups = (page.categories || []).map(skillCategory).filter(Boolean).join("\n\n");
+
+  const body = `
+    <header class="page-header">
+        <h1>${esc(page.heading)}</h1>
+${String(page.intro || "").trim() ? `        <p class="page-intro">${esc(page.intro)}</p>\n` : ""}${String(page.note || "").trim() ? `        <p class="skill-scale">${esc(page.note)}</p>\n` : ""}    </header>
+
+    <div class="skills-page">
+${groups}
+    </div>
+`;
+
+  return head(`${page.heading} — ${site.name}`, c) + body + foot(site);
+}
+
 /* -------------------------------------------------------------- contact */
 
 export function buildContact(c) {
@@ -351,6 +413,7 @@ export function buildAll(content) {
   const files = {
     "index.html": buildIndex(content),
     "contact.html": buildContact(content),
+    "skills.html": buildSkills(content),
     "content.json": JSON.stringify(content, null, 2) + "\n",
   };
 
@@ -364,4 +427,4 @@ export function buildAll(content) {
   return files;
 }
 
-export { COLLECTIONS };
+export { COLLECTIONS, NAV_PAGES };

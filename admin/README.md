@@ -21,18 +21,24 @@ if a request fails partway.
 
 ## Pages
 
-Three collections — **Work**, **Education** and **Skills** — share one shape.
+Two collections — **Work** and **Education** — share one shape.
 Each produces an index page of cards, plus a detail page for any entry that has
 something to show:
 
     work.html                     index of cards
     work-pm-thinking-coach.html   detail page for one entry
     education.html
-    skills.html
 
 Detail pages are written flat (`work-<slug>.html`, not `work/<slug>.html`) so
 every page sits beside `style.css` and the images, and one set of relative links
 works from everywhere.
+
+**Skills** is not a collection. It is one page of rated skills, edited on its own
+tab: categories of skills, each skill carrying a level from 0 to 100. Leave a
+level blank and the skill is listed without a bar — right for a tool or a
+language, where a score would be measuring nothing. Each category has a control
+that sets or clears every level in it at once, because filling seventy of them
+one at a time is the difference between using this and not bothering.
 
 An entry gets a **Learn More** link only once it has at least one section with
 content. Until then it is a card and nothing more — better than a link to an

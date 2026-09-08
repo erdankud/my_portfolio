@@ -83,6 +83,24 @@ function disconnect() {
 
 /** Fill in anything a hand-edited or older content.json is missing. */
 function migrate(c) {
+  // Skills used to be a collection of cards; it is now a rated list.
+  if (c.collections?.skills) delete c.collections.skills;
+  const page = (c.skillsPage ||= {});
+  page.navLabel ||= "Skills";
+  page.heading ||= "Skills";
+  page.intro ??= "";
+  page.note ??= "";
+  page.categories ||= [];
+  for (const cat of page.categories) {
+    cat.id ||= slugify(cat.name || "group");
+    cat.note ??= "";
+    cat.skills ||= [];
+    for (const skill of cat.skills) {
+      skill.name ??= "";
+      if (skill.level === undefined) skill.level = null;
+    }
+  }
+
   c.collections ||= {};
   for (const id of COLLECTIONS) {
     const col = (c.collections[id] ||= {});
@@ -588,6 +606,160 @@ function groupsEditor(col) {
   return box;
 }
 
+/** A skill row: name, a 0-100 slider bound to a number box, and delete. */
+function skillRowEditor(list, i, redraw) {
+  const skill = list[i];
+
+  const name = el("input", { type: "text", value: skill.name ?? "", placeholder: "Skill" });
+  name.addEventListener("input", () => {
+    skill.name = name.value;
+    markDirty();
+  });
+
+  const hasLevel = skill.level !== null && skill.level !== "" && skill.level !== undefined;
+  const slider = el("input", {
+    type: "range", min: "0", max: "100", step: "1",
+    value: hasLevel ? String(skill.level) : "50",
+    disabled: !hasLevel,
+  });
+  const number = el("input", {
+    type: "number", min: "0", max: "100", step: "1",
+    className: "skill-num",
+    value: hasLevel ? String(skill.level) : "",
+    placeholder: "—",
+  });
+
+  const setLevel = (value, from) => {
+    if (value === "") {
+      skill.level = null;
+      slider.disabled = true;
+      number.value = "";
+    } else {
+      const n = Math.max(0, Math.min(100, Math.round(Number(value) || 0)));
+      skill.level = n;
+      slider.disabled = false;
+      if (from !== "slider") slider.value = String(n);
+      if (from !== "number") number.value = String(n);
+    }
+    markDirty();
+  };
+
+  slider.addEventListener("input", () => setLevel(slider.value, "slider"));
+  number.addEventListener("input", () => setLevel(number.value, "number"));
+
+  return el("div", { className: "skill-edit-row" }, [
+    name,
+    slider,
+    number,
+    el("div", { className: "row-tools" }, [
+      moveBtn(list, i, -1, redraw),
+      moveBtn(list, i, +1, redraw),
+      el("button", {
+        type: "button", className: "icon danger", title: "Delete", textContent: "\u00d7",
+        onclick: () => { list.splice(i, 1); markDirty(); redraw(); },
+      }),
+    ]),
+  ]);
+}
+
+function renderSkills() {
+  const page = state.content.skillsPage;
+  const panel = $("#panel-skills");
+  panel.replaceChildren();
+
+  panel.append(
+    el("details", { className: "card settings-card" }, [
+      el("summary", {}, [el("span", { className: "card-title", textContent: "Page settings" })]),
+      el("div", { className: "card-body" }, [
+        field("Navigation label", page, "navLabel"),
+        field("Page heading", page, "heading"),
+        field("Page intro", page, "intro", { multiline: true, rows: 4 }),
+        field("Scale note", page, "note", {
+          hint: "The line under the intro explaining what the numbers mean.",
+        }),
+      ]),
+    ])
+  );
+
+  const box = el("div");
+  panel.append(box);
+
+  objectList(box, page.categories, {
+    title: (cat) => cat.name,
+    subtitle: (cat) => {
+      const skills = cat.skills || [];
+      const rated = skills.filter((x) => x.level !== null && x.level !== "").length;
+      return rated ? `${skills.length} skills · ${rated} rated` : `${skills.length} skills · no bars`;
+    },
+    blank: { id: "", name: "", note: "", skills: [] },
+    addLabel: "+ Add category",
+    fields: (cat, redrawCats) => {
+      const nameField = liveLabel(field("Category", cat, "name"), () => cat.name);
+
+      const rows = el("div", { className: "skill-edit-list" });
+      const drawRows = () => {
+        rows.replaceChildren();
+        cat.skills ||= [];
+        if (!cat.skills.length)
+          rows.append(el("p", { className: "muted empty", textContent: "No skills yet." }));
+        cat.skills.forEach((_, i) => rows.append(skillRowEditor(cat.skills, i, drawRows)));
+        rows.append(
+          el("button", {
+            type: "button", className: "add small", textContent: "+ Add skill",
+            onclick: () => {
+              cat.skills.push({ name: "", level: null });
+              markDirty();
+              drawRows();
+            },
+          })
+        );
+      };
+      drawRows();
+
+      // Filling 71 levels one at a time is the difference between using this
+      // and not bothering, so the whole category can be set at once.
+      const bulkValue = el("input", {
+        type: "number", min: "0", max: "100", step: "1",
+        className: "skill-num", placeholder: "0-100",
+      });
+      const applyBulk = (value) => {
+        for (const skill of cat.skills) skill.level = value;
+        markDirty();
+        drawRows();
+      };
+
+      return [
+        nameField,
+        field("Note", cat, "note", { hint: "Optional line under the category heading." }),
+        el("div", { className: "field" }, [
+          el("label", { textContent: "Set every skill in this category" }),
+          el("div", { className: "row" }, [
+            bulkValue,
+            el("button", {
+              type: "button", textContent: "Apply",
+              onclick: () => {
+                if (bulkValue.value === "") return;
+                applyBulk(Math.max(0, Math.min(100, Math.round(Number(bulkValue.value) || 0))));
+              },
+            }),
+            el("button", {
+              type: "button", textContent: "Clear bars",
+              onclick: () => applyBulk(null),
+            }),
+          ]),
+          el("p", {
+            className: "hint",
+            textContent:
+              "Clearing leaves the skills listed without a bar — right for things a 0-100 score would not describe, like a tool or a language.",
+          }),
+        ]),
+        el("p", { className: "section-label", textContent: "Skills" }),
+        rows,
+      ];
+    },
+  });
+}
+
 function render() {
   const c = state.content;
 
@@ -610,6 +782,7 @@ function render() {
   );
 
   for (const id of COLLECTIONS) renderCollection(id);
+  renderSkills();
 
   $("#panel-site").replaceChildren(
     field("Name", c.site, "name", { hint: "Shown in the nav and page titles." }),
@@ -633,6 +806,7 @@ function refreshPreviewOptions() {
   const pages = [
     { value: "index.html", label: "Home" },
     { value: "contact.html", label: "Contact" },
+    { value: "skills.html", label: state.content.skillsPage?.heading || "Skills" },
   ];
   for (const id of COLLECTIONS) {
     const col = state.content.collections[id];
