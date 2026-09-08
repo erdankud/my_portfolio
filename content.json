@@ -450,7 +450,7 @@
     "navLabel": "Skills",
     "heading": "Skills",
     "intro": "The six directions below are the skill map of product management — the same map the PM Thinking Coach is built on, from Sergey Tikhomirov's Product Architecture Framework. Rather than list the tools I have touched, it lists the work the profession is actually made of, and where I stand on each part of it.",
-    "note": "Levels are self-assessed on a 0–100 scale.",
+    "note": "Self-assessed on a 0–100 scale, against my own experience rather than against the field: around 80 is work I have owned repeatedly and can point at an outcome for, around 60 is work I have done in fewer contexts, and below 50 is work I understand but have not owned.",
     "categories": [
       {
         "id": "discovery",
@@ -458,43 +458,43 @@
         "skills": [
           {
             "name": "Feedback collection and processing",
-            "level": 50
+            "level": 72
           },
           {
             "name": "Conducting interviews",
-            "level": 50
+            "level": 80
           },
           {
             "name": "Drafting interview scripts",
-            "level": 50
+            "level": 68
           },
           {
             "name": "Monitoring product metrics",
-            "level": 50
+            "level": 78
           },
           {
             "name": "Building the customer context",
-            "level": 50
+            "level": 72
           },
           {
             "name": "Qualitative customer behavior analysis",
-            "level": 50
+            "level": 72
           },
           {
             "name": "Analyzing root causes of metric changes",
-            "level": 50
+            "level": 74
           },
           {
             "name": "Modeling changes",
-            "level": 50
+            "level": 70
           },
           {
             "name": "Defining research goals",
-            "level": 50
+            "level": 74
           },
           {
             "name": "Building a metric system",
-            "level": 50
+            "level": 84
           }
         ],
         "note": ""
@@ -505,43 +505,43 @@
         "skills": [
           {
             "name": "Identifying needs",
-            "level": 50
+            "level": 75
           },
           {
             "name": "Analyzing alternative solutions",
-            "level": 50
+            "level": 74
           },
           {
             "name": "Formalizing use cases",
-            "level": 50
+            "level": 76
           },
           {
             "name": "Formalizing requirements",
-            "level": 50
+            "level": 82
           },
           {
             "name": "Defining the solution and value propositions",
-            "level": 50
+            "level": 72
           },
           {
             "name": "Defining business logic",
-            "level": 50
+            "level": 76
           },
           {
             "name": "Designing the interface",
-            "level": 50
+            "level": 62
           },
           {
             "name": "Building the design system and metaphors",
-            "level": 50
+            "level": 55
           },
           {
             "name": "Defining the product concept",
-            "level": 50
+            "level": 76
           },
           {
             "name": "Analyzing technologies and trends",
-            "level": 50
+            "level": 74
           }
         ],
         "note": ""
@@ -552,51 +552,51 @@
         "skills": [
           {
             "name": "Building the backlog",
-            "level": 50
+            "level": 85
           },
           {
             "name": "Supporting the development process",
-            "level": 50
+            "level": 84
           },
           {
             "name": "Acceptance testing of changes",
-            "level": 50
+            "level": 70
           },
           {
             "name": "Creating user guides",
-            "level": 50
+            "level": 52
           },
           {
             "name": "Collecting and analyzing change impact",
-            "level": 50
+            "level": 72
           },
           {
             "name": "Backlog prioritization",
-            "level": 50
+            "level": 84
           },
           {
             "name": "Release planning",
-            "level": 50
+            "level": 80
           },
           {
             "name": "Setting up development projects",
-            "level": 50
+            "level": 80
           },
           {
             "name": "Managing integrations",
-            "level": 50
+            "level": 68
           },
           {
             "name": "Preparing migrations",
-            "level": 50
+            "level": 55
           },
           {
             "name": "Training users on product usage",
-            "level": 50
+            "level": 55
           },
           {
             "name": "Optimizing go-to-market delivery processes",
-            "level": 50
+            "level": 70
           }
         ],
         "note": ""
@@ -607,23 +607,23 @@
         "skills": [
           {
             "name": "Monitoring sales funnel metrics",
-            "level": 50
+            "level": 68
           },
           {
             "name": "Defining product value and features",
-            "level": 50
+            "level": 76
           },
           {
             "name": "Monitoring media and influencers",
-            "level": 50
+            "level": 42
           },
           {
             "name": "Tracking industry events",
-            "level": 50
+            "level": 55
           },
           {
             "name": "Drafting Release Notes",
-            "level": 50
+            "level": 58
           },
           {
             "name": "Writing Case Studies",
@@ -631,47 +631,47 @@
           },
           {
             "name": "Defining acquisition channels and offers",
-            "level": 50
+            "level": 58
           },
           {
             "name": "Finding and acquiring customers",
-            "level": 50
+            "level": 66
           },
           {
             "name": "Sales funnel optimization",
-            "level": 50
+            "level": 66
           },
           {
             "name": "In-product activation and onboarding",
-            "level": 50
+            "level": 70
           },
           {
             "name": "Defining retention mechanics",
-            "level": 50
+            "level": 66
           },
           {
             "name": "Defining positioning and competitive strategy",
-            "level": 50
+            "level": 64
           },
           {
             "name": "Customer acquisition strategy",
-            "level": 50
+            "level": 62
           },
           {
             "name": "Customer retention strategy",
-            "level": 50
+            "level": 60
           },
           {
             "name": "Go-to-market strategy",
-            "level": 50
+            "level": 58
           },
           {
             "name": "Product sunset strategy",
-            "level": 50
+            "level": 40
           },
           {
             "name": "Product PR strategy",
-            "level": 50
+            "level": 40
           }
         ],
         "note": ""
@@ -682,51 +682,51 @@
         "skills": [
           {
             "name": "Idea generation and management",
-            "level": 50
+            "level": 70
           },
           {
             "name": "Formulating hypotheses",
-            "level": 50
+            "level": 76
           },
           {
             "name": "Evaluating and comparing ideas",
-            "level": 50
+            "level": 74
           },
           {
             "name": "Running experiments",
-            "level": 50
+            "level": 68
           },
           {
             "name": "Experiment prioritization",
-            "level": 50
+            "level": 70
           },
           {
             "name": "Setting up the experimentation process",
-            "level": 50
+            "level": 58
           },
           {
             "name": "Knowledge management",
-            "level": 50
+            "level": 76
           },
           {
             "name": "Product development prioritization",
-            "level": 50
+            "level": 82
           },
           {
             "name": "Setting product growth goals",
-            "level": 50
+            "level": 74
           },
           {
             "name": "Building the product strategy",
-            "level": 50
+            "level": 70
           },
           {
             "name": "Product portfolio strategy",
-            "level": 50
+            "level": 58
           },
           {
             "name": "Creating the vision",
-            "level": 50
+            "level": 68
           }
         ],
         "note": ""
@@ -737,43 +737,43 @@
         "skills": [
           {
             "name": "Preparing sales scripts and handling objections",
-            "level": 50
+            "level": 58
           },
           {
             "name": "Product presales",
-            "level": 50
+            "level": 68
           },
           {
             "name": "Market sizing",
-            "level": 50
+            "level": 68
           },
           {
             "name": "Macro-environment analysis",
-            "level": 50
+            "level": 64
           },
           {
             "name": "Internal company analysis",
-            "level": 50
+            "level": 80
           },
           {
             "name": "Competitor analysis",
-            "level": 50
+            "level": 72
           },
           {
             "name": "Defining customer segments for the sales strategy",
-            "level": 50
+            "level": 62
           },
           {
             "name": "Optimizing the monetization model",
-            "level": 50
+            "level": 56
           },
           {
             "name": "Defining the business model and monetization plan",
-            "level": 50
+            "level": 66
           },
           {
             "name": "Financial planning and P&L management",
-            "level": 50
+            "level": 64
           }
         ],
         "note": ""
