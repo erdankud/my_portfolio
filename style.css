@@ -383,9 +383,27 @@ a { color: var(--accent); }
 
 .skill-group:first-child { border-top: none; margin-top: 24px; padding-top: 0; }
 
+/* The heading shares the skill row's grid, so the category's own bar sits
+   directly above the bars it averages. */
+.skill-group-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 200px 2.5ch;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 18px;
+}
+
 .skill-group h2 {
     font-size: 1.5rem;
-    margin-bottom: 18px;
+    margin: 0;
+}
+
+.skill-meter-lg { height: 8px; background: #e2e2e6; }
+
+.skill-value-lg {
+    font-size: 1rem;
+    color: var(--ink);
+    font-weight: 500;
 }
 
 .skill-note {
@@ -452,6 +470,12 @@ a { color: var(--accent); }
 .skill-group-plain .skill-name { font-size: 0.88rem; }
 
 @media (max-width: 700px) {
+    .skill-group-head {
+        grid-template-columns: minmax(0, 1fr) 2.5ch;
+        gap: 8px 14px;
+    }
+    .skill-meter-lg { grid-column: 1 / -1; }
+
     /* The bar drops under the name rather than squeezing both. */
     .skill-row {
         grid-template-columns: minmax(0, 1fr) 2.5ch;

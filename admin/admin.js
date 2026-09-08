@@ -1,5 +1,7 @@
 import { Repo, GitHubError } from "./github.js";
-import { buildAll, slugify, detailPath, hasDetail, COLLECTIONS } from "./templates.js";
+import {
+  buildAll, slugify, detailPath, hasDetail, categoryAverage, COLLECTIONS,
+} from "./templates.js";
 
 const SITE_URL = "https://erdankud.github.io/my_portfolio/";
 const STORE = "portfolio.admin";
@@ -688,8 +690,12 @@ function renderSkills() {
     title: (cat) => cat.name,
     subtitle: (cat) => {
       const skills = cat.skills || [];
-      const rated = skills.filter((x) => x.level !== null && x.level !== "").length;
-      return rated ? `${skills.length} skills · ${rated} rated` : `${skills.length} skills · no bars`;
+      const average = categoryAverage(cat);
+      // The average is computed, so seeing it here is the only way to know what
+      // moving one slider did to the category's own rating.
+      return average === null
+        ? `${skills.length} skills · no bars`
+        : `${skills.length} skills · average ${average}`;
     },
     blank: { id: "", name: "", note: "", skills: [] },
     addLabel: "+ Add category",

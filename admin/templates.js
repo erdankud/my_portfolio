@@ -11,7 +11,7 @@
 
 // Bump this whenever style.css changes, so browsers fetch the new file instead
 // of a cached copy. GitHub Pages serves the stylesheet with a long cache life.
-const CSS_VERSION = 6;
+const CSS_VERSION = 7;
 
 const FONTS =
   "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Karla:ital,wght@0,300..600;1,300..500&display=swap";
@@ -343,13 +343,43 @@ function skillRow(skill) {
                 </li>`;
 }
 
+/** The levels in a category that are actually set, as numbers. */
+export function ratedLevels(cat) {
+  return (cat.skills || [])
+    .filter((s) => String(s.name || "").trim())
+    .map((s) => (s.level === null || s.level === "" ? NaN : Number(s.level)))
+    .filter((n) => Number.isFinite(n));
+}
+
+/**
+ * A category's rating is the mean of its skills, computed rather than stored.
+ * A stored average is a second copy of the same fact, and the two drift apart
+ * the first time a skill is edited and the average is not.
+ */
+export function categoryAverage(cat) {
+  const levels = ratedLevels(cat);
+  if (!levels.length) return null;
+  return Math.round(levels.reduce((a, b) => a + b, 0) / levels.length);
+}
+
 function skillCategory(cat) {
   const skills = (cat.skills || []).filter((s) => String(s.name || "").trim());
   if (!skills.length) return "";
-  const rated = skills.some((s) => s.level !== null && s.level !== "" && Number.isFinite(Number(s.level)));
+  const average = categoryAverage(cat);
+  const rated = average !== null;
+
+  const heading = rated
+    ? `            <div class="skill-group-head">
+                <h2>${esc(cat.name)}</h2>
+                <span class="skill-meter skill-meter-lg" role="img" aria-label="${escAttr(cat.name)} average: ${average} out of 100">
+                    <span class="skill-fill" style="width:${average}%"></span>
+                </span>
+                <span class="skill-value skill-value-lg">${average}</span>
+            </div>`
+    : `            <div class="skill-group-head"><h2>${esc(cat.name)}</h2></div>`;
 
   return `        <section class="skill-group${rated ? "" : " skill-group-plain"}">
-            <h2>${esc(cat.name)}</h2>
+${heading}
 ${String(cat.note || "").trim() ? `            <p class="skill-note">${esc(cat.note)}</p>\n` : ""}            <ul class="skill-list">
 ${skills.map(skillRow).join("\n")}
             </ul>
