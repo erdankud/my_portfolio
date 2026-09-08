@@ -28,35 +28,76 @@
     <header class="page-header detail-header">
         <a class="back-link" href="work.html">← My Work</a>
         <h1>PM Thinking Coach</h1>
-        <p class="tagline">Turning the PM skill map into a route you can walk</p>
+        <p class="tagline">The map of the profession, turned into a route you can walk from zero</p>
         <p class="detail-meta">Founder &amp; Product Lead; June 2026 – Present</p>
     </header>
 
     <figure class="detail-hero">
-        <img src="pm-thinking-coach.png" alt="PM Thinking Coach: the Map screen showing the skill tree of six domains across three rings">
-        <figcaption>The Map: six domains across three rings, with the recommended next block on the right.</figcaption>
+        <img src="pmtc-map.jpg" alt="The Skills Map: 71 skill cards arranged in six sectors and three rings, with a red line marking how far the learner has got">
+        <figcaption>The skill map, made interactive. The red frontier is the only colour on it — it marks exactly what you have covered.</figcaption>
     </figure>
 
     <div class="detail-body">
         <section class="detail-section">
             <h2>What it is</h2>
-            <p>A learning app built from problem statement to a working end to end product: a PM skill tree of structured learning blocks and interactive decision scenarios to learn and evaluate your seniority level, on a SwiftUI client with a FastAPI + Postgres backend.</p>
+            <p>Most material for new product managers is a library: a pile of articles you are trusted to sequence yourself. That works if you already know what you are missing, which is precisely what a beginner does not.</p>
+            <p>PM Thinking Coach turns the map of the profession into a route. Two skill trees — product management and system design — hold 167 skills between them. Each is a card you can open and read. Each block of skills ends in a gate: a real situation with incomplete data where you decide and defend the decision in writing.</p>
+            <p>It runs on iOS in SwiftUI and in the browser, both on one FastAPI and Postgres backend, with the same account and the same corpus.</p>
+            <figure class="detail-figure">
+                <img src="pmtc-learn.jpg" alt="The Learn screen: six directions, the current block, and the next lesson on a black plate" loading="lazy">
+                <figcaption>Learn answers two questions and nothing else: which direction am I on, and what do I read next.</figcaption>
+            </figure>
         </section>
 
         <section class="detail-section">
-            <h2>How it works</h2>
-            <p>The design problem was to build something that measures thinking rather than recall. Scoring rewards reasoning over answer-picking, and a content validator enforces it.</p>
+            <h2>A gate, not a quiz</h2>
+            <p>This is the decision the whole product rests on. A multiple-choice test measures whether you remember the right answer; the job measures whether you can defend a call with the evidence you actually have. So a gate hands you a company, a constraint and a deadline, lets you choose what evidence to look at, and then asks you to write down why.</p>
+            <p>Scoring enforces it rather than merely encouraging it. Rationale and communication carry 60 of 100 points against 25 for the decision itself, and the pass mark is 70 — so picking the option a grader would like, even with every piece of evidence reviewed, cannot pass on its own. A content validator rejects any scenario where a defensible alternative scores too low, which keeps a single-right-answer question out of the corpus by construction.</p>
             <ul>
-                <li>Rationale and communication carry 60 of 100 points against 25 for the decision itself, so picking the right option cannot pass on its own</li>
-                <li>Covered 7 competency tracks across three proficiency levels: product sense, analytics, user research, prioritization, execution, communication, and system design</li>
-                <li>Total of 159 lessons, 36 simulation scenarios, and a 515-term glossary</li>
-                <li>Implemented an audio overview feature that narrates lessons and coaching feedback for hands-free review</li>
+                <li>Every gate has at least two scenarios, each with a different company, so a retake cannot be passed from memory</li>
+                <li>Failing costs nothing: no XP is taken, nothing locks, and the result points at the exact lessons that would have helped</li>
+                <li>The server owns score, XP and unlock status; the client renders them and never derives them, so a UI bug cannot open a gate early</li>
             </ul>
+            <figure class="detail-figure">
+                <img src="pmtc-gate.jpg" alt="A gate scenario: a shift-scheduling company whose month-two churn has risen from 9% to 16%" loading="lazy">
+                <figcaption>A gate opens with a situation, not a question. The evidence you choose to look at is part of what is scored.</figcaption>
+            </figure>
         </section>
 
         <section class="detail-section">
-            <h2>Measuring it</h2>
-            <p>Defined the beta success metrics before launch: activation, time to first value, D7 repeat practice, and feedback usefulness.</p>
+            <h2>The lessons</h2>
+            <p>A lesson is one idea, one model, and where that model stops working — three to five minutes on the product map, twelve to fifteen in system design. Every domain follows one fictional company through all of its blocks, so the examples accumulate instead of resetting.</p>
+            <p>Lessons can carry an audio overview: two hosts talking the lesson through, in the sense NotebookLM made familiar. It is deliberately not the lesson read aloud — prose read out loud always sounds like prose read out loud. The dialogue is written once at build time and stored as a content file, so it can be reviewed and edited like any other, and the runtime never calls a model.</p>
+            <p>The model that writes it is checked, not trusted: a draft is rejected if it uses a number or a term that does not appear in the lesson, if it collapses into a monologue, or if it quotes the lesson verbatim. Edit the lesson and its overview stops counting as current rather than quietly voicing last week's edition.</p>
+            <figure class="detail-figure">
+                <img src="pmtc-lesson.jpg" alt="A lesson page with its audio overview player and a summary card headed “The point”" loading="lazy">
+                <figcaption>A lesson, its audio overview, and the one thing to take away from it.</figcaption>
+            </figure>
+        </section>
+
+        <section class="detail-section">
+            <h2>What is in it</h2>
+            <p>The corpus is authored, not generated — and it is finished. Both trees are fully published.</p>
+            <ul>
+                <li>Two skill trees: product management (18 blocks, 71 skills) and system design (18 blocks, 96 skills), each open from day one</li>
+                <li>248 lessons, 36 gates and 87 gate scenarios, every one written and reviewed</li>
+                <li>96 exercises in system design that are formative on purpose: no XP, no effect on what opens next, and the reference reasoning comes back even on an empty submission</li>
+                <li>A 489-term glossary, and diagrams stored as structure rather than pictures, so a screen reader gets a description rather than an image</li>
+                <li>Eight competencies tracked per learner, one per domain of the map plus communication and system design</li>
+                <li>Bilingual: Russian is the authored source, English is an overlay merged over it. The rubric and option weights exist in one copy only, so the language someone reads in cannot change what they score — a property of the construction, not of discipline</li>
+            </ul>
+            <figure class="detail-figure">
+                <img src="pmtc-progress.jpg" alt="The Progress screen: level, XP, blocks passed, lessons read, and the eight competencies" loading="lazy">
+                <figcaption>Progress owns the numbers, so the other screens do not repeat them.</figcaption>
+            </figure>
+        </section>
+
+        <section class="detail-section">
+            <h2>Where it stands</h2>
+            <p>Both trees are complete and a full traversal has been verified end to end through the API. The evaluator currently runs a deterministic mock: it exercises the whole flow, but the coaching text reads as a stub and gate calibration against the QA fixtures is not meaningful until a real provider is wired up. That is the next decision, and it is deliberately the last one — nothing about the product depends on which model answers.</p>
+            <ul>
+                <li>Defined the beta success metrics before launch: activation, time to first value, D7 repeat practice, and whether the feedback was useful</li>
+            </ul>
         </section>
     </div>
 

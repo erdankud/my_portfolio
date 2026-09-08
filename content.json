@@ -19,7 +19,7 @@
     "previousWorkHeading": "Previous Work",
     "previousWork": [
       "Before graduate school, I spent nearly four years as a Senior IT Project Manager at Attract Group, where I owned the discovery to launch process for 10+ client products across fintech, marketplace, and healthtech, managing cross functional teams of up to 15 engineers and specialists.",
-      "On the side, I've been building the PM Thinking Coach. It is a learning app with a structured PM skill tree, 159 lessons, 36 simulation scenarios, and a 515-term glossary, built on SwiftUI and FastAPI."
+      "On the side, I've been building the PM Thinking Coach. It is a course for people entering product management from zero: two skill trees of 167 skills, 248 lessons, and 36 gates where you decide on a real situation and defend the decision in writing. SwiftUI on iOS, a web client, FastAPI and Postgres behind both."
     ],
     "contactHeading": "Get in Touch"
   },
@@ -47,48 +47,81 @@
           "group": "projects",
           "title": "PM Thinking Coach",
           "meta": "Founder & Product Lead; June 2026 – Present",
-          "summary": "A learning app that turns the product management skill map into a route: structured lessons, then a real situation with incomplete data that checks you can apply the skill.",
-          "image": "pm-thinking-coach.png",
-          "imageAlt": "PM Thinking Coach: the Map screen showing the skill tree of six domains across three rings",
-          "tagline": "Turning the PM skill map into a route you can walk",
+          "summary": "A course for people entering product management from zero. The skill map of the profession becomes a route: short lessons explain a skill, then a real situation with incomplete data checks you can apply it.",
+          "image": "pmtc-map.jpg",
+          "imageAlt": "The Skills Map: 71 skill cards arranged in six sectors and three rings, with a red line marking how far the learner has got",
+          "tagline": "The map of the profession, turned into a route you can walk from zero",
           "sections": [
             {
               "heading": "What it is",
               "paragraphs": [
-                "A learning app built from problem statement to a working end to end product: a PM skill tree of structured learning blocks and interactive decision scenarios to learn and evaluate your seniority level, on a SwiftUI client with a FastAPI + Postgres backend."
+                "Most material for new product managers is a library: a pile of articles you are trusted to sequence yourself. That works if you already know what you are missing, which is precisely what a beginner does not.",
+                "PM Thinking Coach turns the map of the profession into a route. Two skill trees — product management and system design — hold 167 skills between them. Each is a card you can open and read. Each block of skills ends in a gate: a real situation with incomplete data where you decide and defend the decision in writing.",
+                "It runs on iOS in SwiftUI and in the browser, both on one FastAPI and Postgres backend, with the same account and the same corpus."
               ],
               "bullets": [],
-              "image": "",
-              "imageAlt": "",
-              "caption": ""
+              "image": "pmtc-learn.jpg",
+              "imageAlt": "The Learn screen: six directions, the current block, and the next lesson on a black plate",
+              "caption": "Learn answers two questions and nothing else: which direction am I on, and what do I read next."
             },
             {
-              "heading": "How it works",
+              "heading": "A gate, not a quiz",
               "paragraphs": [
-                "The design problem was to build something that measures thinking rather than recall. Scoring rewards reasoning over answer-picking, and a content validator enforces it."
+                "This is the decision the whole product rests on. A multiple-choice test measures whether you remember the right answer; the job measures whether you can defend a call with the evidence you actually have. So a gate hands you a company, a constraint and a deadline, lets you choose what evidence to look at, and then asks you to write down why.",
+                "Scoring enforces it rather than merely encouraging it. Rationale and communication carry 60 of 100 points against 25 for the decision itself, and the pass mark is 70 — so picking the option a grader would like, even with every piece of evidence reviewed, cannot pass on its own. A content validator rejects any scenario where a defensible alternative scores too low, which keeps a single-right-answer question out of the corpus by construction."
               ],
               "bullets": [
-                "Rationale and communication carry 60 of 100 points against 25 for the decision itself, so picking the right option cannot pass on its own",
-                "Covered 7 competency tracks across three proficiency levels: product sense, analytics, user research, prioritization, execution, communication, and system design",
-                "Total of 159 lessons, 36 simulation scenarios, and a 515-term glossary",
-                "Implemented an audio overview feature that narrates lessons and coaching feedback for hands-free review"
+                "Every gate has at least two scenarios, each with a different company, so a retake cannot be passed from memory",
+                "Failing costs nothing: no XP is taken, nothing locks, and the result points at the exact lessons that would have helped",
+                "The server owns score, XP and unlock status; the client renders them and never derives them, so a UI bug cannot open a gate early"
               ],
-              "image": "",
-              "imageAlt": "",
-              "caption": ""
+              "image": "pmtc-gate.jpg",
+              "imageAlt": "A gate scenario: a shift-scheduling company whose month-two churn has risen from 9% to 16%",
+              "caption": "A gate opens with a situation, not a question. The evidence you choose to look at is part of what is scored."
             },
             {
-              "heading": "Measuring it",
+              "heading": "The lessons",
               "paragraphs": [
-                "Defined the beta success metrics before launch: activation, time to first value, D7 repeat practice, and feedback usefulness."
+                "A lesson is one idea, one model, and where that model stops working — three to five minutes on the product map, twelve to fifteen in system design. Every domain follows one fictional company through all of its blocks, so the examples accumulate instead of resetting.",
+                "Lessons can carry an audio overview: two hosts talking the lesson through, in the sense NotebookLM made familiar. It is deliberately not the lesson read aloud — prose read out loud always sounds like prose read out loud. The dialogue is written once at build time and stored as a content file, so it can be reviewed and edited like any other, and the runtime never calls a model.",
+                "The model that writes it is checked, not trusted: a draft is rejected if it uses a number or a term that does not appear in the lesson, if it collapses into a monologue, or if it quotes the lesson verbatim. Edit the lesson and its overview stops counting as current rather than quietly voicing last week's edition."
               ],
               "bullets": [],
+              "image": "pmtc-lesson.jpg",
+              "imageAlt": "A lesson page with its audio overview player and a summary card headed “The point”",
+              "caption": "A lesson, its audio overview, and the one thing to take away from it."
+            },
+            {
+              "heading": "What is in it",
+              "paragraphs": [
+                "The corpus is authored, not generated — and it is finished. Both trees are fully published."
+              ],
+              "bullets": [
+                "Two skill trees: product management (18 blocks, 71 skills) and system design (18 blocks, 96 skills), each open from day one",
+                "248 lessons, 36 gates and 87 gate scenarios, every one written and reviewed",
+                "96 exercises in system design that are formative on purpose: no XP, no effect on what opens next, and the reference reasoning comes back even on an empty submission",
+                "A 489-term glossary, and diagrams stored as structure rather than pictures, so a screen reader gets a description rather than an image",
+                "Eight competencies tracked per learner, one per domain of the map plus communication and system design",
+                "Bilingual: Russian is the authored source, English is an overlay merged over it. The rubric and option weights exist in one copy only, so the language someone reads in cannot change what they score — a property of the construction, not of discipline"
+              ],
+              "image": "pmtc-progress.jpg",
+              "imageAlt": "The Progress screen: level, XP, blocks passed, lessons read, and the eight competencies",
+              "caption": "Progress owns the numbers, so the other screens do not repeat them."
+            },
+            {
+              "heading": "Where it stands",
+              "paragraphs": [
+                "Both trees are complete and a full traversal has been verified end to end through the API. The evaluator currently runs a deterministic mock: it exercises the whole flow, but the coaching text reads as a stub and gate calibration against the QA fixtures is not meaningful until a real provider is wired up. That is the next decision, and it is deliberately the last one — nothing about the product depends on which model answers."
+              ],
+              "bullets": [
+                "Defined the beta success metrics before launch: activation, time to first value, D7 repeat practice, and whether the feedback was useful"
+              ],
               "image": "",
               "imageAlt": "",
               "caption": ""
             }
           ],
-          "caption": "The Map: six domains across three rings, with the recommended next block on the right."
+          "caption": "The skill map, made interactive. The red frontier is the only colour on it — it marks exactly what you have covered."
         },
         {
           "slug": "rae-health",
