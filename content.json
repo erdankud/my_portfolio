@@ -383,11 +383,20 @@
       "navLabel": "Education",
       "heading": "Education",
       "intro": "",
-      "groups": [],
+      "groups": [
+        {
+          "id": "degrees",
+          "heading": "Degrees"
+        },
+        {
+          "id": "certifications",
+          "heading": "Certifications"
+        }
+      ],
       "items": [
         {
           "slug": "boston-university",
-          "group": "",
+          "group": "degrees",
           "title": "Master of Business Administration",
           "meta": "Boston University; Questrom School of Business, MA",
           "summary": "",
@@ -410,7 +419,7 @@
         },
         {
           "slug": "boston-university-msdt",
-          "group": "",
+          "group": "degrees",
           "title": "MS in Digital Technology ",
           "meta": "Boston University; Questrom School of Business, MA",
           "summary": "",
@@ -433,7 +442,7 @@
         },
         {
           "slug": "bard-college",
-          "group": "",
+          "group": "degrees",
           "title": "BA Economics",
           "meta": "Bard College; Annandale-On-Hudson, NY",
           "summary": "",
@@ -442,6 +451,18 @@
           "tagline": "BA Economics, Annandale-On-Hudson, NY",
           "sections": [],
           "caption": ""
+        },
+        {
+          "slug": "professional-scrum-master-i",
+          "group": "certifications",
+          "title": "Professional Scrum Master I",
+          "meta": "Scrum.org — issued April 7, 2023",
+          "summary": "Scrum.org's assessment of the Scrum framework as the Scrum Guide defines it: the roles, events and artefacts, and what each is actually for. It does not expire. The work it describes is what I had been doing at Attract Group, running Scrum across three delivery teams.",
+          "image": "psm-i-certificate.jpg",
+          "imageAlt": "The Professional Scrum Master I certificate issued to Erdan Kudaibergen by Scrum.org on 7 April 2023",
+          "caption": "Verifiable at the address printed on the certificate.",
+          "tagline": "",
+          "sections": []
         }
       ]
     }
@@ -777,87 +798,6 @@
           }
         ],
         "note": ""
-      },
-      {
-        "id": "tools-certifications",
-        "name": "Tools & Certifications",
-        "note": "",
-        "skills": [
-          {
-            "name": "Jira",
-            "level": null
-          },
-          {
-            "name": "Confluence",
-            "level": null
-          },
-          {
-            "name": "Figma",
-            "level": null
-          },
-          {
-            "name": "Linear",
-            "level": null
-          },
-          {
-            "name": "Professional Scrum Master I (PSM I)",
-            "level": null
-          }
-        ]
-      },
-      {
-        "id": "data-ai",
-        "name": "Data & AI",
-        "note": "",
-        "skills": [
-          {
-            "name": "SQL",
-            "level": null
-          },
-          {
-            "name": "Python (pandas)",
-            "level": null
-          },
-          {
-            "name": "Tableau",
-            "level": null
-          },
-          {
-            "name": "Excel",
-            "level": null
-          },
-          {
-            "name": "Amplitude",
-            "level": null
-          },
-          {
-            "name": "RAG architecture",
-            "level": null
-          },
-          {
-            "name": "LLM evaluation & prompt design",
-            "level": null
-          },
-          {
-            "name": "Claude Code",
-            "level": null
-          }
-        ]
-      },
-      {
-        "id": "languages",
-        "name": "Languages",
-        "note": "",
-        "skills": [
-          {
-            "name": "English — fluent",
-            "level": null
-          },
-          {
-            "name": "Russian — native",
-            "level": null
-          }
-        ]
       }
     ]
   }
