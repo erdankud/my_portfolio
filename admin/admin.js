@@ -120,6 +120,8 @@ function migrate(c) {
       item.imageAlt ??= "";
       item.caption ??= "";
       item.tagline ??= "";
+      item.link ??= "";
+      item.linkLabel ??= "";
       item.sections ||= [];
       for (const s of item.sections) {
         s.heading ??= "";
@@ -418,6 +420,8 @@ const BLANK_ITEM = {
   imageAlt: "",
   caption: "",
   tagline: "",
+  link: "",
+  linkLabel: "",
   sections: [],
 };
 
@@ -487,6 +491,10 @@ function itemFields(collectionId, col, item, redraw) {
     field("Tagline", item, "tagline", {
       hint: "The italic line under the title on the detail page.",
     }),
+    field("Link", item, "link", {
+      hint: "Somewhere this entry lives on the web — the running app, a repository. Leave blank for none.",
+    }),
+    field("Link label", item, "linkLabel", { hint: "Defaults to “Visit”." }),
     el("p", { className: "section-label", textContent: "Detail page sections" })
   );
 

@@ -120,7 +120,9 @@
               "caption": ""
             }
           ],
-          "caption": "The skill map, made interactive. The red frontier is the only colour on it — it marks exactly what you have covered."
+          "caption": "The skill map, made interactive. The red frontier is the only colour on it — it marks exactly what you have covered.",
+          "link": "https://pmcoach.onrender.com/",
+          "linkLabel": "Open the app"
         },
         {
           "slug": "rae-health",
@@ -189,7 +191,9 @@
               "caption": "The analytics the baseline came out of: event intensity and counts by time of day."
             }
           ],
-          "caption": ""
+          "caption": "",
+          "link": "",
+          "linkLabel": ""
         },
         {
           "slug": "questrom-consulting-lab",
@@ -240,7 +244,9 @@
               "caption": "Sikich: accounting, advisory, technology and managed services, from Chicago."
             }
           ],
-          "caption": ""
+          "caption": "",
+          "link": "",
+          "linkLabel": ""
         },
         {
           "slug": "attract-group",
@@ -349,7 +355,9 @@
               "caption": "The product page for a modular kit, after the account and checkout work."
             }
           ],
-          "caption": ""
+          "caption": "",
+          "link": "",
+          "linkLabel": ""
         },
         {
           "slug": "european-american-business-organization",
@@ -375,7 +383,9 @@
               "caption": ""
             }
           ],
-          "caption": ""
+          "caption": "",
+          "link": "",
+          "linkLabel": ""
         }
       ]
     },
@@ -415,7 +425,9 @@
               "caption": ""
             }
           ],
-          "caption": ""
+          "caption": "",
+          "link": "",
+          "linkLabel": ""
         },
         {
           "slug": "boston-university-msdt",
@@ -438,7 +450,9 @@
               "imageAlt": "",
               "caption": ""
             }
-          ]
+          ],
+          "link": "",
+          "linkLabel": ""
         },
         {
           "slug": "bard-college",
@@ -450,7 +464,9 @@
           "imageAlt": "",
           "tagline": "BA Economics, Annandale-On-Hudson, NY",
           "sections": [],
-          "caption": ""
+          "caption": "",
+          "link": "",
+          "linkLabel": ""
         },
         {
           "slug": "professional-scrum-master-i",
@@ -462,7 +478,9 @@
           "imageAlt": "The Professional Scrum Master I certificate issued to Erdan Kudaibergen by Scrum.org on 7 April 2023",
           "caption": "Verifiable at the address printed on the certificate.",
           "tagline": "",
-          "sections": []
+          "sections": [],
+          "link": "",
+          "linkLabel": ""
         }
       ]
     }

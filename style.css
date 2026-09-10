@@ -282,6 +282,21 @@ a { color: var(--accent); }
 
 .learn-more:hover { opacity: 0.65; }
 
+/* Learn More and an outbound link sit on one line, separated rather than
+   stacked, so a card keeps its height whether it has one link or two. */
+.card-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin: 0;
+}
+
+/* The arrow marks the link as leaving the site. */
+.learn-more.external::after {
+    content: " ↗";
+    font-size: 0.85em;
+}
+
 /* ----------------------------------------------------------- detail page */
 
 .detail-header { padding-bottom: 10px; }

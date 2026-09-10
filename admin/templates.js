@@ -11,7 +11,7 @@
 
 // Bump this whenever style.css changes, so browsers fetch the new file instead
 // of a cached copy. GitHub Pages serves the stylesheet with a long cache life.
-const CSS_VERSION = 8;
+const CSS_VERSION = 9;
 
 const FONTS =
   "https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Karla:ital,wght@0,300..600;1,300..500&display=swap";
@@ -56,6 +56,13 @@ export function slugify(text) {
 /** The file a detail page is written to. */
 export function detailPath(collectionId, slug) {
   return `${collectionId}-${slug}.html`;
+}
+
+/** An entry's own address on the web, if it has one. */
+export function itemLink(item) {
+  const href = String(item.link || "").trim();
+  if (!href) return null;
+  return { href, label: String(item.linkLabel || "").trim() || "Visit" };
 }
 
 /** An item earns a Learn More link only when there is a page worth opening. */
@@ -207,10 +214,19 @@ function card(collectionId, item) {
     out.push(`                    <p class="card-meta">${esc(item.meta)}</p>`);
   if (String(item.summary || "").trim())
     out.push(`                    <p class="card-summary">${esc(item.summary)}</p>`);
-  if (hasDetail(item))
-    out.push(
-      `                    <a class="learn-more" href="${escAttr(detailPath(collectionId, item.slug))}">Learn More</a>`
-    );
+  const link = itemLink(item);
+  if (hasDetail(item) || link) {
+    out.push(`                    <p class="card-links">`);
+    if (hasDetail(item))
+      out.push(
+        `                        <a class="learn-more" href="${escAttr(detailPath(collectionId, item.slug))}">Learn More</a>`
+      );
+    if (link)
+      out.push(
+        `                        <a class="learn-more external" href="${escAttr(link.href)}" target="_blank" rel="noopener">${esc(link.label)}</a>`
+      );
+    out.push(`                    </p>`);
+  }
   out.push(`                </div>`);
   out.push(`            </article>`);
   return out.join("\n");
@@ -291,12 +307,15 @@ function section(s) {
 export function buildDetail(c, collectionId, item) {
   const { site } = c;
   const col = c.collections[collectionId];
+  const link = itemLink(item);
 
   let body = `
     <header class="page-header detail-header">
         <a class="back-link" href="${collectionId}.html">← ${esc(col.heading)}</a>
         <h1>${esc(item.title)}</h1>
-${String(item.tagline || "").trim() ? `        <p class="tagline">${esc(item.tagline)}</p>\n` : ""}${String(item.meta || "").trim() ? `        <p class="detail-meta">${esc(item.meta)}</p>\n` : ""}    </header>
+${String(item.tagline || "").trim() ? `        <p class="tagline">${esc(item.tagline)}</p>\n` : ""}${String(item.meta || "").trim() ? `        <p class="detail-meta">${esc(item.meta)}</p>\n` : ""}${
+    link ? `        <a class="btn" href="${escAttr(link.href)}" target="_blank" rel="noopener">${esc(link.label)}</a>\n` : ""
+  }    </header>
 `;
 
   if (String(item.image || "").trim()) {
