@@ -123,6 +123,8 @@
     <iframe id="preview-frame" title="Site preview"></iframe>
 </dialog>
 
-<script type="module" src="admin.js"></script>
+<!-- Versioned so the panel can never run a cached older build of itself.
+     Bump this and the templates.js import inside admin.js together. -->
+<script type="module" src="admin.js?v=1"></script>
 </body>
 </html>

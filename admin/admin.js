@@ -1,7 +1,7 @@
 import { Repo, GitHubError } from "./github.js";
 import {
   buildAll, slugify, detailPath, hasDetail, categoryAverage, COLLECTIONS,
-} from "./templates.js";
+} from "./templates.js?v=1";   // keep in step with admin.js?v= in index.html
 
 const SITE_URL = "https://erdankud.github.io/my_portfolio/";
 const STORE = "portfolio.admin";

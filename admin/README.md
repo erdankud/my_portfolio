@@ -95,6 +95,13 @@ When you edit `style.css`, bump `CSS_VERSION` in `templates.js`. GitHub Pages
 serves the stylesheet with a long cache life, so without that bump browsers keep
 using the old file.
 
+The panel's own code carries a version for the same reason, in two places that
+must move together: `admin.js?v=` in `index.html`, and the `./templates.js?v=`
+import at the top of `admin.js`. Bump both after editing either. This is not
+cosmetic — an unversioned panel once kept running a cached `templates.js` and
+republished every page built by it, which silently dropped a link from the HTML
+while leaving it in `content.json`.
+
 ## Files
 
 | File | Purpose |
